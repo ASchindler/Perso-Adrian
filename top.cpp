@@ -66,7 +66,7 @@ int sc_main(int argc, char *argv[])
     y = 0;
     x_exp = 0;
 
-    for(i=0; i<650; i++)
+    for(i=0; i<(639*2+10); i++)
     {
 	if (x == 640)
 	{
@@ -78,7 +78,9 @@ int sc_main(int argc, char *argv[])
 	x_exp_prev = x_exp;
 	x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
 	if (x_exp_prev != x_3)
+	{
 	    cout << "error !!" << endl;
+	}
 	cout << (int)x_exp << endl;
 	x++;
         next_cycle(clk);

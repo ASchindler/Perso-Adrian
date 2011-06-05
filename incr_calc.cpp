@@ -86,13 +86,14 @@ namespace soclib { namespace caba {
 		    /* save col 0 for next line */
 		    if(col == 0)
 		    {
+			cout << "Saving coeffs ----- " << endl;
 			p3_l = p3_o;
 			p2_l = p2_o;
 			p1_l = p1_o;			
 		    }
 
 		    /* next column */
-		    if (col < 640)
+		    if (col < 639)
 		    {
 			col++;
 
@@ -104,10 +105,17 @@ namespace soclib { namespace caba {
 			q1_i = q1_o;
 			
 			r1_i = r1_o;
+			valid = 1;
 		    }
 		    else
-		    {			
+		    {	
+			cout << "p3l " << p3_l << endl;
+			cout << "p2l " << p2_l << endl;
+			cout << "p1l " << p1_l << endl;
+
+		
 			col = 0;
+			valid = 0;
 
 			lin++;
 
@@ -121,11 +129,11 @@ namespace soclib { namespace caba {
 			p1_i = p1_l + s0;
 		    }
    		    
-		    valid = 1;
 		    x_3 = p3_o;
 		    x_2 = p2_o;
 		    x_1 = p1_o;
 
+		    cout << col << " " << lin << endl;
 		    wait();
 		}
 	    }
