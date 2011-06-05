@@ -1,0 +1,45 @@
+#include <cstdio>
+#include "incr_calc.h"
+
+namespace soclib { namespace caba {
+
+    // le constructeur 
+	IncrCalc::IncrCalc()
+	{
+	    SC_THREAD(line_calc);
+	    sensitive << clk.pos();
+	    SC_THREAD(col_calc);
+	    sensitive << clk.pos();
+	}
+
+	void VideoGen::line_calc()
+	{
+	    while(1)
+	    {
+		if(reset_n == false)
+		{
+		    wait();
+		}
+		else
+		{
+		    wait();
+		}
+	    }
+	}
+
+	void VideoGen::col_calc()
+	{
+	    while(1)
+	    {
+		if(reset_n == false)
+		{
+		    wait();
+		}
+		else
+		{
+		    wait();
+		}
+	    }
+	}
+    }
+}
