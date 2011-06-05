@@ -1,5 +1,4 @@
 #include <systemc>
-#include "mfixed.h"
 
 using namespace sc_core;
 using namespace std;
@@ -14,14 +13,19 @@ namespace soclib { namespace caba {
 	    int lin;
 	    int col;
 
+	    /*methods*/
+	    void y_calc();
+	    void x_calc();
+	    void initialise_const();
+
             public:
                 // IO PORTS
 
                 sc_in_clk           clk;
                 sc_in<bool>         reset_n;
 		
-                mfixed  x_a[10];
-                mfixed  y_a[10];
+                int  x_a[10];
+                int  y_a[10];
 		/*
 		  a[9] - a30
 		  a[8] - a20
@@ -35,7 +39,7 @@ namespace soclib { namespace caba {
 		  a[0] - a03
 		 */
 
-		mfixed  x_b[6];
+		int  x_b[6];
 		/*
 		  b[5] - b20
 		  b[4] - b11
@@ -44,54 +48,59 @@ namespace soclib { namespace caba {
 		  b[1] - b01
 		  b[0] - b00
 		*/
-		mfixed  y_b[6];
+		int  y_b[6];
 
-		mfixed  x_c[3];
+		int  x_c[3];
 		/*
 		  c[2] - c10
 		  c[1] - c01
 		  c[0] - c00	
 		*/
-		mfixed  y_c[3];
+		int  y_c[3];
 
 		/* registres */
 
-		mfixed q0;  //constante	
-		mfixed q1_i;
-		mfixed q1_o;
-		mfixed q2_i;
-		mfixed q2_o;
+		int q0;  //constante	
+		int q1_i;
+		int q1_o;
+		int q2_i;
+		int q2_o;
 
-		mfixed r0;  //constante
-		mfixed r1_i;
-		mfixed r1_o;
+		int r0;  //constante
+		int r1_i;
+		int r1_o;
 
-		mfixed s0; //constante
+		int s0; //constante
 
-		mfixed p0; //constante
+		int p0; //constante
 
-		mfixed p1_i;
-		mfixed p1_o;
-		mfixed p1_l;
+		int p1_i;
+		int p1_o;
+		int p1_l;
 
-		mfixed p2_i;
-		mfixed p2_o;
-		mfixed p2_l;
+		int p2_i;
+		int p2_o;
+		int p2_l;
 
-		mfixed p3_i;
-		mfixed p3_o;
-		mfixed p3_l;
+		int p3_i;
+		int p3_o;
+		int p3_l;
 			
 		sc_out<bool> valid;
 		
-                sc_in<unsigned char>   x_i;
-                sc_in<unsigned char>   y_i;
-                sc_in<unsigned char>   x_o;
-                sc_in<unsigned char>   y_o;
+                //sc_in<unsigned char>   x_i;
+                //sc_in<unsigned char>   y_i;
+                sc_out<unsigned char>   x_3;
+                sc_out<unsigned char>   x_2;
+                sc_out<unsigned char>   x_1;
+
+                //sc_in<unsigned char>   y_o;
+
+		IncrCalc(sc_module_name insname);
 
             protected:
                 SC_HAS_PROCESS(IncrCalc);
 
-	}
+	};
     }
 }
