@@ -29,7 +29,7 @@ int sc_main(int argc, char *argv[])
     sc_signal<char> x_3;
     sc_signal<char> x_2;
     sc_signal<char> x_1;
-    sc_signal<bool> valid;
+    sc_signal<bool> x_valid;
 
     sc_trace_file *my_trace_file;
     my_trace_file =
@@ -41,14 +41,14 @@ int sc_main(int argc, char *argv[])
     sc_trace(my_trace_file, x_1, "x_1");
     sc_trace(my_trace_file, valid, "valid");
 
-    IncrCalc my_calc("coproc_incr");
+    IncrCalc my_calc("coproc_incr", a30, a20, a10, a00, a21, a11, a01, a12, a02, a03);
     my_calc.clk(clk);
     my_calc.reset_n(reset_n);
     my_calc.x_3(x_3);
     my_calc.x_2(x_2);
     my_calc.x_1(x_1);
 
-    my_calc.valid(valid);
+    my_calc.valid(x_valid);
 
     next_cycle(clk);
     next_cycle(clk);

@@ -1,3 +1,6 @@
+#define TILE_HEIGHT 16
+#define TILE_WIDTH 16
+
 #include <systemc>
 
 using namespace sc_core;
@@ -14,9 +17,17 @@ namespace soclib { namespace caba {
 	    int col;
 
 	    /*methods*/
-	    void y_calc();
-	    void x_calc();
-	    void initialise_const();
+	    void calc();
+	    void initialise_const(int a30,
+			   int a21,
+			   int a12,
+			   int a03,
+			   int a20,
+			   int a11,
+			   int a02,
+			   int a10,
+			   int a01,
+			   int a00);
 
             public:
                 // IO PORTS
@@ -26,8 +37,7 @@ namespace soclib { namespace caba {
 
 		sc_signal<bool> wait_cyc; //wait one cycle for signal to be valid
 		
-                sc_signal<int>  x_a[10];
-                sc_signal<int>  y_a[10];
+                int  a[10];
 		/*
 		  a[9] - a30
 		  a[8] - a20
@@ -41,7 +51,7 @@ namespace soclib { namespace caba {
 		  a[0] - a03
 		 */
 
-		sc_signal<int>  x_b[6];
+		int  b[6];
 		/*
 		  b[5] - b20
 		  b[4] - b11
@@ -50,15 +60,13 @@ namespace soclib { namespace caba {
 		  b[1] - b01
 		  b[0] - b00
 		*/
-		sc_signal<int>  y_b[6];
-
-		sc_signal<int>  x_c[3];
+		
+		int  c[3];
 		/*
 		  c[2] - c10
 		  c[1] - c01
 		  c[0] - c00	
 		*/
-		sc_signal<int>  y_c[3];
 
 		/* registres */
 
@@ -98,7 +106,17 @@ namespace soclib { namespace caba {
 
                 //sc_in<unsigned char>   y_o;
 
-		IncrCalc(sc_module_name insname);
+		IncrCalc(sc_module_name insname,
+			 int a30,
+			 int a21,
+			 int a12,
+			 int a03,
+			 int a20,
+			 int a11,
+			 int a02,
+			 int a10,
+			 int a01,
+			 int a00);
 
             protected:
                 SC_HAS_PROCESS(IncrCalc);
