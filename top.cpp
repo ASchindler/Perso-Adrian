@@ -11,7 +11,7 @@ int sc_main(int argc, char *argv[])
 
     int i;
     int x, y;
-    unsigned char x_exp, x_exp_prev;
+    char x_exp;
 
     int a30 = 2;
     int a20 = -3;
@@ -26,9 +26,9 @@ int sc_main(int argc, char *argv[])
 
     sc_signal<bool> clk;
     sc_signal<bool> reset_n;
-    sc_signal<unsigned char> x_3;
-    sc_signal<unsigned char> x_2;
-    sc_signal<unsigned char> x_1;
+    sc_signal<char> x_3;
+    sc_signal<char> x_2;
+    sc_signal<char> x_1;
     sc_signal<bool> valid;
 
     sc_trace_file *my_trace_file;
@@ -66,23 +66,27 @@ int sc_main(int argc, char *argv[])
     y = 0;
     x_exp = 0;
 
-    for(i=0; i<(639*2+10); i++)
+    for(i=0; i<(640*550); i++)
+    //while(i<640*550)//for(i=0; i<(640*482); i++)
     {
-	if (x == 640)
+	if(valid.read())
 	{
-	    x = 0;
-	    y++;
-	    cout << endl << "Line " << y << endl;
-	}
+	    if (x == 640)
+	    {
+		x = 0;
+		y++;
+		cout << endl << "Line " << y << endl;
+	    }
 	   
-	x_exp_prev = x_exp;
-	x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
-	if (x_exp_prev != x_3)
-	{
-	    cout << "error !!" << endl;
+	    x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
+	    if (x_exp != x_3.read())
+	    {
+		cout << "error !! expected: " << (int)x_exp << " actual: " << (int)x_3 << endl;
+		exit(1);
+	    }
+	    cout << (int)x_exp << endl;
+	    x++;
 	}
-	cout << (int)x_exp << endl;
-	x++;
         next_cycle(clk);
     }
 
