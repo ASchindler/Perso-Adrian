@@ -16,58 +16,41 @@ namespace soclib { namespace caba {
 	    int lin;
 	    int col;
 
+	    int state;
+	    /* 0 : WAIT
+	       1 : Calculate
+	       2 : Finished
+	    */
+
 	    /*methods*/
 	    void calc();
-	    void initialise_const(int a30,
-			   int a21,
-			   int a12,
-			   int a03,
-			   int a20,
-			   int a11,
-			   int a02,
-			   int a10,
-			   int a01,
-			   int a00);
 
             public:
                 // IO PORTS
 
                 sc_in_clk           clk;
                 sc_in<bool>         reset_n;
-
+		sc_in<bool>         p0_valid;
+		sc_in<bool>         q0_valid;
+		sc_in<bool>         q1_valid;
+		sc_in<bool>         q2_valid;
+		sc_in<bool>         r0_valid;
+		sc_in<bool>         r1_valid;
+		sc_in<bool>         s0_valid;
+		sc_in<bool>         load;
+		sc_in<int>          p0_in;		
+		sc_in<int>          q0_in;
+		sc_in<int>          q1_in;
+		sc_in<int>          q2_in;
+		sc_in<int>          q3_in;
+		sc_in<int>          r0_in;
+		sc_in<int>          r1_in;
+		sc_in<int>          r2_in;
+		sc_in<int>          s0_in;
+		sc_in<int>          s1_in;
+		
 		sc_signal<bool> wait_cyc; //wait one cycle for signal to be valid
 		
-                int  a[10];
-		/*
-		  a[9] - a30
-		  a[8] - a20
-		  a[7] - a10
-		  a[6] - a00
-		  a[5] - a21
-		  a[4] - a11
-		  a[3] - a01
-		  a[2] - a12
-		  a[1] - a02
-		  a[0] - a03
-		 */
-
-		int  b[6];
-		/*
-		  b[5] - b20
-		  b[4] - b11
-		  b[3] - b10
-		  b[2] - b02
-		  b[1] - b01
-		  b[0] - b00
-		*/
-		
-		int  c[3];
-		/*
-		  c[2] - c10
-		  c[1] - c01
-		  c[0] - c00	
-		*/
-
 		/* registres */
 
 		int q0;  //constante	
@@ -75,12 +58,16 @@ namespace soclib { namespace caba {
 
 		sc_signal<int> q2;
 
+		sc_signal<int> q3;
+
 
 		int r0;  //constante
 		sc_signal<int> r1;
+		sc_signal<int> r2;
 
 
 		int s0; //constante
+		sc_signal<int> s1;
 
 		int p0; //constante
 
@@ -96,27 +83,14 @@ namespace soclib { namespace caba {
 
 		sc_signal<int> p3_l;
 			
-		sc_out<bool> valid;
+		sc_out<bool> o_valid;
+		sc_out<bool> o_finished;
 		
-                //sc_in<unsigned char>   x_i;
-                //sc_in<unsigned char>   y_i;
                 sc_out<char>   x_3;
                 sc_out<char>   x_2;
                 sc_out<char>   x_1;
 
-                //sc_in<unsigned char>   y_o;
-
-		IncrCalc(sc_module_name insname,
-			 int a30,
-			 int a21,
-			 int a12,
-			 int a03,
-			 int a20,
-			 int a11,
-			 int a02,
-			 int a10,
-			 int a01,
-			 int a00);
+		IncrCalc(sc_module_name insname);
 
             protected:
                 SC_HAS_PROCESS(IncrCalc);
