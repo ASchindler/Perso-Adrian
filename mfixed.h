@@ -8,6 +8,9 @@
  *
  ************************************************************/
 
+#ifndef _MFIXED
+#define _MFIXED
+
 // fixed point taype definition
 // This works only for big endian
 typedef union {
@@ -18,20 +21,11 @@ typedef union {
     int all;
 }mfixed;
 
-// fixed point multiplication
-inline mfixed fx_mul  (mfixed A, mfixed B)
-{
 
-    return (mfixed)( ((A.l*B.l)>> 16) +
-            (A.l * B.h )    +
-            (A.h * B.l )    +
-            ((A.h*B.h) << 16)
-            );
-}
+// fixed point multiplication
+mfixed fx_mul  (mfixed A, mfixed B);
 
 // fixed point addition
-inline mfixed fx_add (mfixed A, mfixed B)
-{
-    return (mfixed)(A.all + B.all);
-}
+mfixed fx_add (mfixed A, mfixed B);
 
+#endif

@@ -1,7 +1,10 @@
 #define TILE_HEIGHT 16
 #define TILE_WIDTH 16
+#define IMAGE_HEIGHT 480
+#define IMAGE_WIDTH 640
+#define NO_TILES 1200
 
-#include <systemc>
+#include "systemc.h"
 
 using namespace sc_core;
 using namespace std;
@@ -15,6 +18,7 @@ namespace soclib { namespace caba {
 	    /*private line and column counter*/
 	    int lin;
 	    int col;
+	    int tile;
 
 	    int state;
 	    /* 0 : WAIT
@@ -38,57 +42,57 @@ namespace soclib { namespace caba {
 		sc_in<bool>         r1_valid;
 		sc_in<bool>         s0_valid;
 		sc_in<bool>         load;
-		sc_in<int>          p0_in;		
-		sc_in<int>          q0_in;
-		sc_in<int>          q1_in;
-		sc_in<int>          q2_in;
-		sc_in<int>          q3_in;
-		sc_in<int>          r0_in;
-		sc_in<int>          r1_in;
-		sc_in<int>          r2_in;
-		sc_in<int>          s0_in;
-		sc_in<int>          s1_in;
+		sc_in<float>          p0_in;		
+		sc_in<float>          q0_in;
+		sc_in<float>          q1_in;
+		sc_in<float>          q2_in;
+		sc_in<float>          q3_in;
+		sc_in<float>          r0_in;
+		sc_in<float>          r1_in;
+		sc_in<float>          r2_in;
+		sc_in<float>          s0_in;
+		sc_in<float>          s1_in;
 		
 		sc_signal<bool> wait_cyc; //wait one cycle for signal to be valid
 		
 		/* registres */
 
-		int q0;  //constante	
-		sc_signal<int> q1;
+		float q0;  //constante	
+		sc_signal<float> q1;
 
-		sc_signal<int> q2;
+		sc_signal<float> q2;
 
-		sc_signal<int> q3;
-
-
-		int r0;  //constante
-		sc_signal<int> r1;
-		sc_signal<int> r2;
+		sc_signal<float> q3;
 
 
-		int s0; //constante
-		sc_signal<int> s1;
+		float r0;  //constante
+		sc_signal<float> r1;
+		sc_signal<float> r2;
 
-		int p0; //constante
 
-		sc_signal<int> p1;
+		float s0; //constante
+		sc_signal<float> s1;
 
-		sc_signal<int> p1_l;
+		float p0; //constante
 
-		sc_signal<int> p2;
+		sc_signal<float> p1;
 
-		sc_signal<int> p2_l;
+		sc_signal<float> p1_l;
 
-		sc_signal<int> p3;
+		sc_signal<float> p2;
 
-		sc_signal<int> p3_l;
+		sc_signal<float> p2_l;
+
+		sc_signal<float> p3;
+
+		sc_signal<float> p3_l;
 			
 		sc_out<bool> o_valid;
 		sc_out<bool> o_finished;
 		
-                sc_out<char>   x_3;
-                sc_out<char>   x_2;
-                sc_out<char>   x_1;
+                sc_out<float>   x_3;
+                sc_out<float>   x_2;
+                sc_out<float>   x_1;
 
 		IncrCalc(sc_module_name insname);
 

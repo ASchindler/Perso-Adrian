@@ -1,34 +1,39 @@
 #include "systemc.h"
 #include "incr_calc.h"
+
+extern "C"
+{
+#include "mfixed.h"
+}
 #include <cmath>
 
 void next_cycle (sc_signal<bool> &signal_clk);
 void calc_coeffs (int i, int j);
 
-    int a30 = 2;
-    int a20 = -3;
-    int a10 = 2;
-    int a00 = 0;
-    int a21 = 0;
-    int a11 = -2;
-    int a01 = 1;
-    int a12 = 2;
-    int a02 = -1;
-    int a03 = 0;
+float a30 = pow(2,-15);
+float a20 = pow(-3.2,-8);
+float a10 = 2;
+float a00 = 0;
+float a21 = 0;
+float a11 = pow(-2,-7);
+float a01 = 1;
+float a12 =  pow(2,-15);
+float a02 = pow(-2,-8);
+float a03 = 0;
 
-    sc_signal<int> p0;
-    sc_signal<int> p1;
-    sc_signal<int> p2;
-    sc_signal<int> p3;
-    sc_signal<int> q0;
-    sc_signal<int> q1;
-    sc_signal<int> q2;
-    sc_signal<int> q3;
-    sc_signal<int> r0;
-    sc_signal<int> r1;
-    sc_signal<int> r2;
-    sc_signal<int> s0;
-    sc_signal<int> s1;
+    sc_signal<float> p0;
+    sc_signal<float> p1;
+    sc_signal<float> p2;
+    sc_signal<float> p3;
+    sc_signal<float> q0;
+    sc_signal<float> q1;
+    sc_signal<float> q2;
+    sc_signal<float> q3;
+    sc_signal<float> r0;
+    sc_signal<float> r1;
+    sc_signal<float> r2;
+    sc_signal<float> s0;
+    sc_signal<float> s1;
 
 int sc_main(int argc, char *argv[])
 {
@@ -36,14 +41,15 @@ int sc_main(int argc, char *argv[])
     using namespace soclib::caba;    
 
     int i, j;
-    int x, y;
-    char x_exp;
+    float x, y;
+    float x_norm, y_norm;
+    float x_exp;
 
     sc_signal<bool> clk;
     sc_signal<bool> reset_n;
-    sc_signal<char> x_3;
-    sc_signal<char> x_2;
-    sc_signal<char> x_1;
+    sc_signal<float> x_3;
+    sc_signal<float> x_2;
+    sc_signal<float> x_1;
     sc_signal<bool> x_valid;
     sc_signal<bool> p0_valid;    
     sc_signal<bool> q0_valid;
@@ -116,11 +122,11 @@ int sc_main(int argc, char *argv[])
     x_exp = 0;
 
     //for each tile
-    for(j=0; j<1; j++) //30 vertically
-	for(i=0; i<3; i++) //40 horizontally
+    for(j=0; j<30; j++) //30 vertically
+	for(i=0; i<40; i++) //40 horizontally
 	{
-	    x = 16 * i;
-	    y = 16 * j;
+	    x = TILE_WIDTH * i;
+	    y = TILE_HEIGHT * j;
 	    cout << "x : " << x << " y: " << y << endl;
 	    calc_coeffs(i, j);
 	    p0_valid = 1;
@@ -147,14 +153,16 @@ int sc_main(int argc, char *argv[])
 	    s1_valid = 0;
 	    load = 0;
 	    x_exp = 0;
-	    while(!finished)
+	    next_cycle(clk);
+	    while(x_valid && !finished)
 	    {
+		x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
 		cout << "x : " << x << " y: " << y << endl;
 		next_cycle(clk);
-		cout << (int)x_exp << " " << (int)x_3 << endl;
-		if(x_3 != x_exp)
+		cout << " -------------- " << endl;
+		cout << (float)x_exp << " " << ((float)x_3) << endl;
+		if(abs((x_3) - (x_exp))>0.01*abs(x_3))
 		    cout << "ERROR" << endl;
-		x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
 		x++;
 		if (x==16*i+TILE_WIDTH)
 		{
@@ -181,23 +189,42 @@ void next_cycle (sc_signal<bool> &signal_clk)
 
 void calc_coeffs (int i, int j)
 {
+    cout << "calc i " <<  i << " j " << j << endl;
     s0 = 2*a21;
     r0 = 2*a12;
     q0 = 6*a03;
     p0 = 6*a30;
+
+    float x = (16 * i);
+    float y = (16 * j);
+
+    cout << "foo" << endl;
     
     /*      c00          + 16*i*c10       + 16*j*c01         + s0 * j */
-    s1 = (6*a30 + 2*a20) + 6*a30 * 16 * i + 2 * a21 * 16 * j + 2*a21 * 16 * j;
+    s1 = (6*a30 + 2*a20) + 6*a30 * x + 2 * a21 * y;// + 2*a21 * 16 * j;
 
     /*    r1                                           +   r0 * 16 j  */
-    r1 = 2*a12 * 16*i + 2*a12 * 16*j + a12 + a21 + a11 + 2*a12 * 16*j;
+    r1 = 2*a12 * x + 2*a12 * y + a12 + a21 + a11 + 2*a12 * y;
 
-    r2 = pow((16*i),2) * 3*a30 + 2*a21*16*j*16*i + a12 * pow((16*j),2) + (3*a30+2*a20)*16*i + (a21+a11) * 16 * j + (a30 + a20 + a10) + /*16*j*r1*/ (16*j) * (2*a12 * 16*i + 2*a12 * 16*j + a12 + a21 + a11 + 2*a12 * 16*j);
+    //mfixed r2_max = pow((IMAGE_WIDTH),2) * 3*a30 + 2*a21*IMAGE_HEIGHT*IMAGE_WIDTH + a12 * pow((IMAGE_HEIGHT),2) + (3*a30+2*a20)*IMAGE_WIDTH + (a21+a11) * IMAGE_HEIGHT + (a30 + a20 + a10); 
 
-    q1 = 2*a12 * 16*i + 6*a03 * 16*j + 6*a03 + 2*a02 + 6*a03 * 16*j;
+    r2 = pow((x),2) * 3*a30 + 2*a21*y*x + a12 * pow((y),2) + (3*a30+2*a20)*x + (a21+a11) * y + (a30 + a20 + a10); //+ /*16*j*r1*/ (16*j) * (2*a12 * 16*i + 2*a12 * 16*j + a12 + a21 + a11 + 2*a12 * 16*j);
+   
+    //r2 = r2 / r2_max;
 
-    q2 = a21 * pow((16*i),2) + 2*a12*(16*i)*(16*j) + 3*a03*pow((16*j),2) + (a12 + a11)*(16*i) + (3*a03 + 2*a02) * (16*j) + (a03 + a02 + a01) + /*16*j * q1 */ (16 * j) * (2*a12 * 16*i + 6*a03 * 16*j + 6*a03 + 2*a02 + 6*a03 * 16*j);
+    q1 = 2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y;
 
-    q3 = a30 * pow((16*i),3) + a21 * pow((16*i),2) * 16 * j + a12 * 16 * i * pow((16*j),2) + a03*pow((16*j),3) + a20*pow((16*i),2) + a11*16*i*16*j + a02*pow((16*j),2) + a10*16*i + a01*16*j + a00 /* 16 * j * q2 */ + (16*j)*(a21 * pow((16*i),2) + 2*a12*(16*i)*(16*j) + 3*a03*pow((16*j),2) + (a12 + a11)*(16*i) + (3*a03 + 2*a02) * (16*j) + (a03 + a02 + a01) + /*16*j * q1 */ ((16 * j) * (2*a12 * 16*i + 6*a03 * 16*j + 6*a03 + 2*a02 + 6*a03 * 16*j)));
+    //float q2_max = a21 * pow((IMAGE_WIDTH),2) + 2*a12*(IMAGE_WIDTH)*(IMAGE_HEIGHT) + 3*a03*pow((IMAGE_HEIGHT),2) + (a12 + a11)*(IMAGE_WIDTH) + (3*a03 + 2*a02) * (IMAGE_HEIGHT) + (a03 + a02 + a01) + /*16*j * q1 */ (IMAGE_HEIGHT) * (2*a12 * IMAGE_WIDTH + 6*a03 * IMAGE_HEIGHT + 6*a03 + 2*a02 + 6*a03 * IMAGE_HEIGHT);
+
+    q2 = a21 * pow((x),2) + 2*a12*(x)*(y) + 3*a03*pow((y),2) + (a12 + a11)*(x) + (3*a03 + 2*a02) * (y) + (a03 + a02 + a01);// + /*16*j * q1 */ (y) * (2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y);
+
+    //q2 = q2/q2_max;
+
+    q3 = a30 * pow((x),3) + a21 * pow((x),2) * y + a12 * x * pow((y),2) + a03*pow((y),3) + a20*pow((x),2) + a11*x*y + a02*pow((y),2) + a10*x + a01*y + a00;
+
+    //float q3_max =a30 * pow((IMAGE_WIDTH),3) + a21 * pow((IMAGE_WIDTH),2) * IMAGE_HEIGHT + a12 * IMAGE_WIDTH * pow((IMAGE_HEIGHT),2) + a03*pow((IMAGE_HEIGHT),3) + a20*pow((IMAGE_WIDTH),2) + a11*IMAGE_WIDTH*IMAGE_HEIGHT + a02*pow((IMAGE_HEIGHT),2) + a10*IMAGE_WIDTH + a01*IMAGE_HEIGHT + a00;
+
+    //q3 = q3/q3_max;
+ // /* 16 * j * q2 */ + (16*j)*(a21 * pow((16*i),2) + 2*a12*(16*i)*(16*j) + 3*a03*pow((16*j),2) + (a12 + a11)*(16*i) + (3*a03 + 2*a02) * (16*j) + (a03 + a02 + a01) + /*16*j * q1 */ ((16 * j) * (2*a12 * 16*i + 6*a03 * 16*j + 6*a03 + 2*a02 + 6*a03 * 16*j)));
    
 }                        			

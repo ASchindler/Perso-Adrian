@@ -1,0 +1,481 @@
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 0 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 1 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 2 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 3 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 4 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 5 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 6 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 7 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 8 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 9 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 10 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 11 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 12 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 13 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 14 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 15 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 16 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 17 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 18 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 19 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/crt1.o(.debug_info): relocation 20 has invalid symbol index 20
+/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+incr_calc.o: In function `soclib::caba::IncrCalc::IncrCalc(sc_core::sc_module_name)':
+incr_calc.cpp:(.text+0x22): undefined reference to `sc_core::sc_module::sc_module(sc_core::sc_module_name const&)'
+incr_calc.cpp:(.text+0x33a): undefined reference to `sc_core::sc_simcontext::create_thread_process(char const*, bool, void (sc_core::sc_process_host::*)(), sc_core::sc_process_host*, sc_core::sc_spawn_options const*)'
+incr_calc.cpp:(.text+0x364): undefined reference to `sc_core::sc_sensitive::operator<<(sc_core::sc_process_handle)'
+incr_calc.cpp:(.text+0x3b8): undefined reference to `sc_core::sc_sensitive_pos::operator<<(sc_core::sc_process_handle)'
+incr_calc.cpp:(.text+0x409): undefined reference to `sc_core::sc_sensitive_neg::operator<<(sc_core::sc_process_handle)'
+incr_calc.cpp:(.text+0x47c): undefined reference to `sc_core::sc_sensitive::operator<<(sc_core::sc_event_finder&)'
+incr_calc.cpp:(.text+0x6a7): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+incr_calc.cpp:(.text+0x92c): undefined reference to `sc_core::sc_module::~sc_module()'
+incr_calc.o: In function `soclib::caba::IncrCalc::IncrCalc(sc_core::sc_module_name)':
+incr_calc.cpp:(.text+0x96a): undefined reference to `sc_core::sc_module::sc_module(sc_core::sc_module_name const&)'
+incr_calc.cpp:(.text+0xc82): undefined reference to `sc_core::sc_simcontext::create_thread_process(char const*, bool, void (sc_core::sc_process_host::*)(), sc_core::sc_process_host*, sc_core::sc_spawn_options const*)'
+incr_calc.cpp:(.text+0xcac): undefined reference to `sc_core::sc_sensitive::operator<<(sc_core::sc_process_handle)'
+incr_calc.cpp:(.text+0xd00): undefined reference to `sc_core::sc_sensitive_pos::operator<<(sc_core::sc_process_handle)'
+incr_calc.cpp:(.text+0xd51): undefined reference to `sc_core::sc_sensitive_neg::operator<<(sc_core::sc_process_handle)'
+incr_calc.cpp:(.text+0xdc4): undefined reference to `sc_core::sc_sensitive::operator<<(sc_core::sc_event_finder&)'
+incr_calc.cpp:(.text+0xfef): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+incr_calc.cpp:(.text+0x1274): undefined reference to `sc_core::sc_module::~sc_module()'
+incr_calc.o: In function `__static_initialization_and_destruction_0(int, int)':
+incr_calc.cpp:(.text+0x1dc0): undefined reference to `sc_core::sc_api_version_2_2_0::sc_api_version_2_2_0()'
+incr_calc.o: In function `sc_core::sc_process_b::reference_decrement()':
+incr_calc.cpp:(.text._ZN7sc_core12sc_process_b19reference_decrementEv[sc_core::sc_process_b::reference_decrement()]+0x34): undefined reference to `sc_core::sc_process_b::m_delete_next_p'
+incr_calc.cpp:(.text._ZN7sc_core12sc_process_b19reference_decrementEv[sc_core::sc_process_b::reference_decrement()]+0x40): undefined reference to `sc_core::sc_process_b::m_delete_next_p'
+incr_calc.cpp:(.text._ZN7sc_core12sc_process_b19reference_decrementEv[sc_core::sc_process_b::reference_decrement()]+0x4c): undefined reference to `sc_core::sc_process_b::m_delete_next_p'
+incr_calc.cpp:(.text._ZN7sc_core12sc_process_b19reference_decrementEv[sc_core::sc_process_b::reference_decrement()]+0x5d): undefined reference to `sc_core::sc_process_b::m_delete_next_p'
+incr_calc.cpp:(.text._ZN7sc_core12sc_process_b19reference_decrementEv[sc_core::sc_process_b::reference_decrement()]+0x69): undefined reference to `sc_core::sc_process_b::m_delete_next_p'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core12sc_process_b19reference_decrementEv[sc_core::sc_process_b::reference_decrement()]+0x93): more undefined references to `sc_core::sc_process_b::m_delete_next_p' follow
+incr_calc.o: In function `sc_core::sc_get_curr_simcontext()':
+incr_calc.cpp:(.text._ZN7sc_core22sc_get_curr_simcontextEv[sc_core::sc_get_curr_simcontext()]+0x10): undefined reference to `sc_core::sc_curr_simcontext'
+incr_calc.cpp:(.text._ZN7sc_core22sc_get_curr_simcontextEv[sc_core::sc_get_curr_simcontext()]+0x2d): undefined reference to `sc_core::sc_simcontext::sc_simcontext()'
+incr_calc.cpp:(.text._ZN7sc_core22sc_get_curr_simcontextEv[sc_core::sc_get_curr_simcontext()]+0x55): undefined reference to `sc_core::sc_default_global_context'
+incr_calc.cpp:(.text._ZN7sc_core22sc_get_curr_simcontextEv[sc_core::sc_get_curr_simcontext()]+0x5c): undefined reference to `sc_core::sc_default_global_context'
+incr_calc.cpp:(.text._ZN7sc_core22sc_get_curr_simcontextEv[sc_core::sc_get_curr_simcontext()]+0x63): undefined reference to `sc_core::sc_curr_simcontext'
+incr_calc.cpp:(.text._ZN7sc_core22sc_get_curr_simcontextEv[sc_core::sc_get_curr_simcontext()]+0x6a): undefined reference to `sc_core::sc_curr_simcontext'
+incr_calc.o: In function `sc_dt::sc_logic::to_char() const':
+incr_calc.cpp:(.text._ZNK5sc_dt8sc_logic7to_charEv[sc_dt::sc_logic::to_char() const]+0x13): undefined reference to `sc_dt::sc_logic::logic_to_char'
+incr_calc.o: In function `sc_core::sc_module::wait()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_module4waitEv[sc_core::sc_module::wait()]+0x1c): undefined reference to `sc_core::wait(sc_core::sc_simcontext*)'
+incr_calc.o: In function `sc_core::sc_event::~sc_event()':
+incr_calc.cpp:(.text._ZN7sc_core8sc_eventD1Ev[sc_core::sc_event::~sc_event()]+0x17): undefined reference to `sc_core::sc_event::cancel()'
+incr_calc.o: In function `sc_core::sc_event::notify_next_delta()':
+incr_calc.cpp:(.text._ZN7sc_core8sc_event17notify_next_deltaEv[sc_core::sc_event::notify_next_delta()]+0x28): undefined reference to `sc_core::SC_ID_NOTIFY_DELAYED_'
+incr_calc.cpp:(.text._ZN7sc_core8sc_event17notify_next_deltaEv[sc_core::sc_event::notify_next_delta()]+0x32): undefined reference to `sc_core::sc_report_handler::report(sc_core::sc_severity, char const*, char const*, char const*, int)'
+incr_calc.o: In function `sc_core::sc_signal_in_if<bool>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIbED2Ev[sc_core::sc_signal_in_if<bool>::~sc_signal_in_if()]+0x55): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_write_if<bool>::~sc_signal_write_if()':
+incr_calc.cpp:(.text._ZN7sc_core18sc_signal_write_ifIbED2Ev[sc_core::sc_signal_write_if<bool>::~sc_signal_write_if()]+0x55): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_inout_if<bool>::~sc_signal_inout_if()':
+incr_calc.cpp:(.text._ZN7sc_core18sc_signal_inout_ifIbED2Ev[sc_core::sc_signal_inout_if<bool>::~sc_signal_inout_if()]+0xcd): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core18sc_signal_inout_ifIbED2Ev[sc_core::sc_signal_inout_if<bool>::~sc_signal_inout_if()]+0xf0): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal<bool>::sc_signal()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x17): undefined reference to `sc_core::sc_interface::sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x1c): undefined reference to `VTT for sc_core::sc_signal<bool>'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x3e): undefined reference to `sc_core::sc_gen_unique_name(char const*, bool)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x51): undefined reference to `sc_core::sc_prim_channel::sc_prim_channel(char const*)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x56): undefined reference to `vtable for sc_core::sc_signal<bool>'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x6e): undefined reference to `vtable for sc_core::sc_signal<bool>'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x76): undefined reference to `vtable for sc_core::sc_signal<bool>'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x8a): undefined reference to `vtable for sc_core::sc_signal<bool>'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0xa5): undefined reference to `sc_dt::UINT64_ONE'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x110): undefined reference to `VTT for sc_core::sc_signal<bool>'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIbEC1Ev[sc_core::sc_signal<bool>::sc_signal()]+0x13c): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_in_if<sc_dt::sc_logic>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIN5sc_dt8sc_logicEED2Ev[sc_core::sc_signal_in_if<sc_dt::sc_logic>::~sc_signal_in_if()]+0x55): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_in_if<sc_dt::sc_logic>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIN5sc_dt8sc_logicEED1Ev[sc_core::sc_signal_in_if<sc_dt::sc_logic>::~sc_signal_in_if()]+0x47): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_in_if<sc_dt::sc_logic>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIN5sc_dt8sc_logicEED0Ev[sc_core::sc_signal_in_if<sc_dt::sc_logic>::~sc_signal_in_if()]+0x47): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_write_if<sc_dt::sc_logic>::~sc_signal_write_if()':
+incr_calc.cpp:(.text._ZN7sc_core18sc_signal_write_ifIN5sc_dt8sc_logicEED2Ev[sc_core::sc_signal_write_if<sc_dt::sc_logic>::~sc_signal_write_if()]+0x55): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core18sc_signal_write_ifIN5sc_dt8sc_logicEED1Ev[sc_core::sc_signal_write_if<sc_dt::sc_logic>::~sc_signal_write_if()]+0x47): more undefined references to `sc_core::sc_interface::~sc_interface()' follow
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED1Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x125): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED1Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x15d): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED1Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x1b8): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED1Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x1db): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED0Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x125): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED0Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x15d): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED0Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x1b8): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEED0Ev[sc_core::sc_signal<sc_dt::sc_logic>::~sc_signal()]+0x1db): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::get_data_ref() const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_signalIN5sc_dt8sc_logicEE12get_data_refEv[sc_core::sc_signal<sc_dt::sc_logic>::get_data_ref() const]+0xd): undefined reference to `sc_core::sc_deprecated_get_data_ref()'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::posedge() const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_signalIN5sc_dt8sc_logicEE7posedgeEv[sc_core::sc_signal<sc_dt::sc_logic>::posedge() const]+0x30): undefined reference to `sc_dt::SC_LOGIC_1'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::negedge() const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_signalIN5sc_dt8sc_logicEE7negedgeEv[sc_core::sc_signal<sc_dt::sc_logic>::negedge() const]+0x30): undefined reference to `sc_dt::SC_LOGIC_0'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::trace(sc_core::sc_trace_file*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_signalIN5sc_dt8sc_logicEE5traceEPNS_13sc_trace_fileE[sc_core::sc_signal<sc_dt::sc_logic>::trace(sc_core::sc_trace_file*) const]+0x17): undefined reference to `sc_core::sc_deprecated_trace()'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::register_port(sc_core::sc_port_base&, char const*)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEE13register_portERNS_12sc_port_baseEPKc[sc_core::sc_signal<sc_dt::sc_logic>::register_port(sc_core::sc_port_base&, char const*)]+0xd1): undefined reference to `sc_core::sc_signal_invalid_writer(sc_core::sc_object*, sc_core::sc_object*, sc_core::sc_object*)'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::write(sc_dt::sc_logic const&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEE5writeERKS2_[sc_core::sc_signal<sc_dt::sc_logic>::write(sc_dt::sc_logic const&)]+0x77): undefined reference to `sc_core::sc_signal_invalid_writer(sc_core::sc_object*, sc_core::sc_object*, sc_core::sc_object*)'
+incr_calc.o: In function `sc_core::sc_signal<sc_dt::sc_logic>::update()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEE6updateEv[sc_core::sc_signal<sc_dt::sc_logic>::update()]+0x86): undefined reference to `sc_dt::SC_LOGIC_1'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIN5sc_dt8sc_logicEE6updateEv[sc_core::sc_signal<sc_dt::sc_logic>::update()]+0xce): undefined reference to `sc_dt::SC_LOGIC_0'
+incr_calc.o: In function `sc_core::sc_in<bool>::sc_in()':
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIbEC1Ev[sc_core::sc_in<bool>::sc_in()]+0x1f): undefined reference to `vtable for sc_core::sc_in<bool>'
+incr_calc.o: In function `sc_core::sc_in<bool>::~sc_in()':
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIbED1Ev[sc_core::sc_in<bool>::~sc_in()]+0x16): undefined reference to `vtable for sc_core::sc_in<bool>'
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIbED1Ev[sc_core::sc_in<bool>::~sc_in()]+0x22): undefined reference to `sc_core::sc_in<bool>::remove_traces() const'
+incr_calc.o: In function `sc_core::sc_inout<bool>::sc_inout()':
+incr_calc.cpp:(.text._ZN7sc_core8sc_inoutIbEC2Ev[sc_core::sc_inout<bool>::sc_inout()]+0x1f): undefined reference to `vtable for sc_core::sc_inout<bool>'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::operator->() const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::operator->() const]+0x23): undefined reference to `sc_core::SC_ID_GET_IF_'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::operator->() const]+0x2b): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::sc_event_finder_t(sc_core::sc_port_base const&, sc_core::sc_event const& (sc_core::sc_signal_in_if<bool>::*)() const)':
+incr_calc.cpp:(.text._ZN7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEEC1ERKNS_12sc_port_baseEMS2_KFRKNS_8sc_eventEvE[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::sc_event_finder_t(sc_core::sc_port_base const&, sc_core::sc_event const& (sc_core::sc_signal_in_if<bool>::*)() const)]+0x2a): undefined reference to `sc_core::sc_event_finder::sc_event_finder(sc_core::sc_port_base const&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::operator->()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::operator->()]+0x23): undefined reference to `sc_core::SC_ID_GET_IF_'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::operator->()]+0x2b): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_signal_in_if<float>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIfED2Ev[sc_core::sc_signal_in_if<float>::~sc_signal_in_if()]+0x55): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_in_if<float>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIfED1Ev[sc_core::sc_signal_in_if<float>::~sc_signal_in_if()]+0x47): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_in_if<float>::~sc_signal_in_if()':
+incr_calc.cpp:(.text._ZN7sc_core15sc_signal_in_ifIfED0Ev[sc_core::sc_signal_in_if<float>::~sc_signal_in_if()]+0x47): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_write_if<float>::~sc_signal_write_if()':
+incr_calc.cpp:(.text._ZN7sc_core18sc_signal_write_ifIfED2Ev[sc_core::sc_signal_write_if<float>::~sc_signal_write_if()]+0x55): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal_write_if<float>::~sc_signal_write_if()':
+incr_calc.cpp:(.text._ZN7sc_core18sc_signal_write_ifIfED1Ev[sc_core::sc_signal_write_if<float>::~sc_signal_write_if()]+0x47): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core18sc_signal_write_ifIfED0Ev[sc_core::sc_signal_write_if<float>::~sc_signal_write_if()]+0x47): more undefined references to `sc_core::sc_interface::~sc_interface()' follow
+incr_calc.o: In function `sc_core::sc_signal<float>::sc_signal()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfEC1Ev[sc_core::sc_signal<float>::sc_signal()]+0x17): undefined reference to `sc_core::sc_interface::sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfEC1Ev[sc_core::sc_signal<float>::sc_signal()]+0x3e): undefined reference to `sc_core::sc_gen_unique_name(char const*, bool)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfEC1Ev[sc_core::sc_signal<float>::sc_signal()]+0x51): undefined reference to `sc_core::sc_prim_channel::sc_prim_channel(char const*)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfEC1Ev[sc_core::sc_signal<float>::sc_signal()]+0xa9): undefined reference to `sc_dt::UINT64_ONE'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfEC1Ev[sc_core::sc_signal<float>::sc_signal()]+0x11a): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal<float>::~sc_signal()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED1Ev[sc_core::sc_signal<float>::~sc_signal()]+0x9b): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED1Ev[sc_core::sc_signal<float>::~sc_signal()]+0xb3): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED1Ev[sc_core::sc_signal<float>::~sc_signal()]+0x10e): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED1Ev[sc_core::sc_signal<float>::~sc_signal()]+0x131): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_signal<float>::~sc_signal()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED0Ev[sc_core::sc_signal<float>::~sc_signal()]+0x9b): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED0Ev[sc_core::sc_signal<float>::~sc_signal()]+0xb3): undefined reference to `sc_core::sc_prim_channel::~sc_prim_channel()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED0Ev[sc_core::sc_signal<float>::~sc_signal()]+0x10e): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfED0Ev[sc_core::sc_signal<float>::~sc_signal()]+0x131): undefined reference to `sc_core::sc_interface::~sc_interface()'
+incr_calc.o: In function `sc_core::sc_out<bool>::~sc_out()':
+incr_calc.cpp:(.text._ZN7sc_core6sc_outIbED1Ev[sc_core::sc_out<bool>::~sc_out()]+0x1f): undefined reference to `sc_core::sc_inout<bool>::~sc_inout()'
+incr_calc.o: In function `sc_core::sc_out<bool>::~sc_out()':
+incr_calc.cpp:(.text._ZN7sc_core6sc_outIbED0Ev[sc_core::sc_out<bool>::~sc_out()]+0x1f): undefined reference to `sc_core::sc_inout<bool>::~sc_inout()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::sc_port_b(int, sc_core::sc_port_policy)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::sc_port_b(int, sc_core::sc_port_policy)]+0x25): undefined reference to `sc_core::sc_port_base::sc_port_base(int, sc_core::sc_port_policy)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::sc_port_b(int, sc_core::sc_port_policy)]+0x5f): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEED0Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::~sc_port_b()]+0x39): more undefined references to `sc_core::sc_port_base::~sc_port_base()' follow
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::sc_port_b(int, sc_core::sc_port_policy)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::sc_port_b(int, sc_core::sc_port_policy)]+0x25): undefined reference to `sc_core::sc_port_base::sc_port_base(int, sc_core::sc_port_policy)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::sc_port_b(int, sc_core::sc_port_policy)]+0x5f): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEED0Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::~sc_port_b()]+0x39): more undefined references to `sc_core::sc_port_base::~sc_port_base()' follow
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::operator->()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::operator->()]+0x23): undefined reference to `sc_core::SC_ID_GET_IF_'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::operator->()]+0x2b): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::operator->() const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::operator->() const]+0x23): undefined reference to `sc_core::SC_ID_GET_IF_'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEptEv[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::operator->() const]+0x2b): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_signal<float>::write(float const&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfE5writeERKf[sc_core::sc_signal<float>::write(float const&)]+0x6b): undefined reference to `sc_core::sc_signal_invalid_writer(sc_core::sc_object*, sc_core::sc_object*, sc_core::sc_object*)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::sc_port_b(int, sc_core::sc_port_policy)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::sc_port_b(int, sc_core::sc_port_policy)]+0x25): undefined reference to `sc_core::sc_port_base::sc_port_base(int, sc_core::sc_port_policy)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::sc_port_b(int, sc_core::sc_port_policy)]+0x5f): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEED0Ev[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::~sc_port_b()]+0x39): more undefined references to `sc_core::sc_port_base::~sc_port_base()' follow
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::sc_port_b(int, sc_core::sc_port_policy)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::sc_port_b(int, sc_core::sc_port_policy)]+0x25): undefined reference to `sc_core::sc_port_base::sc_port_base(int, sc_core::sc_port_policy)'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEC2EiNS_14sc_port_policyE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::sc_port_b(int, sc_core::sc_port_policy)]+0x5f): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEED2Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()]+0x39): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEED1Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()]+0x53): undefined reference to `sc_core::sc_port_base::~sc_port_base()'
+incr_calc.o:incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEED0Ev[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::~sc_port_b()]+0x39): more undefined references to `sc_core::sc_port_base::~sc_port_base()' follow
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x30): undefined reference to `sc_core::sc_module::get_child_objects() const'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x48): undefined reference to `sc_core::sc_module::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x50): undefined reference to `sc_core::sc_module::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x58): undefined reference to `sc_core::sc_module::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN6soclib4caba8IncrCalcE[vtable for soclib::caba::IncrCalc]+0x60): undefined reference to `sc_core::sc_module::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIfEE[vtable for sc_core::sc_out<float>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIfEE[vtable for sc_core::sc_out<float>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIfEE[vtable for sc_core::sc_out<float>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIfEE[vtable for sc_core::sc_out<float>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIfEE[vtable for sc_core::sc_out<float>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIfEE[vtable for sc_core::sc_out<float>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core8sc_inoutIfEE[vtable for sc_core::sc_inout<float>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core8sc_inoutIfEE[vtable for sc_core::sc_inout<float>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core8sc_inoutIfEE[vtable for sc_core::sc_inout<float>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core8sc_inoutIfEE[vtable for sc_core::sc_inout<float>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core8sc_inoutIfEE[vtable for sc_core::sc_inout<float>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core8sc_inoutIfEE[vtable for sc_core::sc_inout<float>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<float>, 1, (sc_core::sc_port_policy)0>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x88): undefined reference to `sc_core::sc_inout<bool>::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core6sc_outIbEE[vtable for sc_core::sc_out<bool>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIfEE[vtable for sc_core::sc_signal<float>]+0x148): undefined reference to `sc_core::sc_prim_channel::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIfEE[vtable for sc_core::sc_signal<float>]+0x150): undefined reference to `sc_core::sc_prim_channel::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIfEE[vtable for sc_core::sc_signal<float>]+0x158): undefined reference to `sc_core::sc_prim_channel::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIfEE[vtable for sc_core::sc_signal<float>]+0x160): undefined reference to `sc_core::sc_prim_channel::end_of_simulation()'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIfEE0_NS_18sc_signal_inout_ifIfEE[vtable for sc_core::sc_signal<float>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIfEE0_NS_18sc_signal_inout_ifIfEE[vtable for sc_core::sc_signal<float>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIfEE0_NS_15sc_signal_in_ifIfEE[vtable for sc_core::sc_signal<float>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIfEE0_NS_15sc_signal_in_ifIfEE[vtable for sc_core::sc_signal<float>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIfEE8_NS_18sc_signal_write_ifIfEE[vtable for sc_core::sc_signal<float>]+0x80): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIfEE8_NS_18sc_signal_write_ifIfEE[vtable for sc_core::sc_signal<float>]+0x88): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_inout_ifIfEE[vtable for sc_core::sc_signal_inout_if<float>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_inout_ifIfEE[vtable for sc_core::sc_signal_inout_if<float>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIfEE0_NS_15sc_signal_in_ifIfEE[vtable for sc_core::sc_signal_inout_if<float>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIfEE0_NS_15sc_signal_in_ifIfEE[vtable for sc_core::sc_signal_inout_if<float>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIfEE8_NS_18sc_signal_write_ifIfEE[vtable for sc_core::sc_signal_inout_if<float>]+0x80): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIfEE8_NS_18sc_signal_write_ifIfEE[vtable for sc_core::sc_signal_inout_if<float>]+0x88): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_write_ifIfEE[vtable for sc_core::sc_signal_write_if<float>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_write_ifIfEE[vtable for sc_core::sc_signal_write_if<float>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core15sc_signal_in_ifIfEE[vtable for sc_core::sc_signal_in_if<float>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTVN7sc_core15sc_signal_in_ifIfEE[vtable for sc_core::sc_signal_in_if<float>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core5sc_inIfEE[vtable for sc_core::sc_in<float>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core5sc_inIfEE[vtable for sc_core::sc_in<float>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core5sc_inIfEE[vtable for sc_core::sc_in<float>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core5sc_inIfEE[vtable for sc_core::sc_in<float>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core5sc_inIfEE[vtable for sc_core::sc_in<float>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core5sc_inIfEE[vtable for sc_core::sc_in<float>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIfEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<float>, 1, (sc_core::sc_port_policy)0>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_18sc_signal_inout_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_inout_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core7sc_portINS_15sc_signal_in_ifIbEELi1ELNS_14sc_port_policyE0EEE[vtable for sc_core::sc_port<sc_core::sc_signal_in_if<bool>, 1, (sc_core::sc_port_policy)0>]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x10): undefined reference to `sc_core::sc_object::print(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x18): undefined reference to `sc_core::sc_object::dump(std::basic_ostream<char, std::char_traits<char> >&) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x20): undefined reference to `sc_core::sc_object::trace(sc_core::sc_trace_file*) const'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x80): undefined reference to `sc_core::sc_port_base::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x88): undefined reference to `sc_core::sc_port_base::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x90): undefined reference to `sc_core::sc_port_base::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[vtable for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x98): undefined reference to `sc_core::sc_port_base::end_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x168): undefined reference to `sc_core::sc_prim_channel::before_end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x170): undefined reference to `sc_core::sc_prim_channel::end_of_elaboration()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x178): undefined reference to `sc_core::sc_prim_channel::start_of_simulation()'
+incr_calc.o:(.rodata._ZTVN7sc_core9sc_signalIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x180): undefined reference to `sc_core::sc_prim_channel::end_of_simulation()'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIN5sc_dt8sc_logicEEE0_NS_18sc_signal_inout_ifIS2_EE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIN5sc_dt8sc_logicEEE0_NS_18sc_signal_inout_ifIS2_EE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIN5sc_dt8sc_logicEEE0_NS_15sc_signal_in_ifIS2_EE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIN5sc_dt8sc_logicEEE0_NS_15sc_signal_in_ifIS2_EE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIN5sc_dt8sc_logicEEE8_NS_18sc_signal_write_ifIS2_EE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x80): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core9sc_signalIN5sc_dt8sc_logicEEE8_NS_18sc_signal_write_ifIS2_EE[vtable for sc_core::sc_signal<sc_dt::sc_logic>]+0x88): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_inout_ifIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal_inout_if<sc_dt::sc_logic>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_inout_ifIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal_inout_if<sc_dt::sc_logic>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIN5sc_dt8sc_logicEEE0_NS_15sc_signal_in_ifIS2_EE[vtable for sc_core::sc_signal_inout_if<sc_dt::sc_logic>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIN5sc_dt8sc_logicEEE0_NS_15sc_signal_in_ifIS2_EE[vtable for sc_core::sc_signal_inout_if<sc_dt::sc_logic>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIN5sc_dt8sc_logicEEE8_NS_18sc_signal_write_ifIS2_EE[vtable for sc_core::sc_signal_inout_if<sc_dt::sc_logic>]+0x80): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTCN7sc_core18sc_signal_inout_ifIN5sc_dt8sc_logicEEE8_NS_18sc_signal_write_ifIS2_EE[vtable for sc_core::sc_signal_inout_if<sc_dt::sc_logic>]+0x88): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_write_ifIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal_write_if<sc_dt::sc_logic>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTVN7sc_core18sc_signal_write_ifIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal_write_if<sc_dt::sc_logic>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTVN7sc_core15sc_signal_in_ifIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal_in_if<sc_dt::sc_logic>]+0x30): undefined reference to `sc_core::sc_interface::register_port(sc_core::sc_port_base&, char const*)'
+incr_calc.o:(.rodata._ZTVN7sc_core15sc_signal_in_ifIN5sc_dt8sc_logicEEE[vtable for sc_core::sc_signal_in_if<sc_dt::sc_logic>]+0x38): undefined reference to `sc_core::sc_interface::default_event() const'
+incr_calc.o:(.rodata._ZTIN6soclib4caba8IncrCalcE[typeinfo for soclib::caba::IncrCalc]+0x18): undefined reference to `typeinfo for sc_core::sc_module'
+incr_calc.o:(.rodata._ZTIN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEE[typeinfo for sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >]+0x10): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.o:(.rodata._ZTIN7sc_core6sc_outIbEE[typeinfo for sc_core::sc_out<bool>]+0x10): undefined reference to `typeinfo for sc_core::sc_inout<bool>'
+incr_calc.o:(.rodata._ZTIN7sc_core9sc_signalIfEE[typeinfo for sc_core::sc_signal<float>]+0x28): undefined reference to `typeinfo for sc_core::sc_prim_channel'
+incr_calc.o:(.rodata._ZTIN7sc_core18sc_signal_write_ifIfEE[typeinfo for sc_core::sc_signal_write_if<float>]+0x18): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o:(.rodata._ZTIN7sc_core15sc_signal_in_ifIfEE[typeinfo for sc_core::sc_signal_in_if<float>]+0x18): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o:(.rodata._ZTIN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEEE[typeinfo for sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >]+0x10): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.o:(.rodata._ZTIN7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEEE[typeinfo for sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >]+0x10): undefined reference to `typeinfo for sc_core::sc_event_finder'
+incr_calc.o:(.rodata._ZTIN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEE[typeinfo for sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >]+0x10): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.o:(.rodata._ZTIN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEEE[typeinfo for sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >]+0x10): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.o:(.rodata._ZTIN7sc_core9sc_signalIN5sc_dt8sc_logicEEE[typeinfo for sc_core::sc_signal<sc_dt::sc_logic>]+0x28): undefined reference to `typeinfo for sc_core::sc_prim_channel'
+incr_calc.o:(.rodata._ZTIN7sc_core18sc_signal_write_ifIN5sc_dt8sc_logicEEE[typeinfo for sc_core::sc_signal_write_if<sc_dt::sc_logic>]+0x18): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o:(.rodata._ZTIN7sc_core18sc_signal_write_ifIbEE[typeinfo for sc_core::sc_signal_write_if<bool>]+0x18): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o:(.rodata._ZTIN7sc_core15sc_signal_in_ifIN5sc_dt8sc_logicEEE[typeinfo for sc_core::sc_signal_in_if<sc_dt::sc_logic>]+0x18): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o:(.rodata._ZTIN7sc_core15sc_signal_in_ifIbEE[typeinfo for sc_core::sc_signal_in_if<bool>]+0x18): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o: In function `soclib::caba::IncrCalc::~IncrCalc()':
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD1Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x383): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD1Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x39d): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD1Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x7ac): undefined reference to `sc_core::sc_module::~sc_module()'
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD1Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x7c6): undefined reference to `sc_core::sc_module::~sc_module()'
+incr_calc.o: In function `soclib::caba::IncrCalc::~IncrCalc()':
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD0Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x383): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD0Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x39d): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD0Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x7ac): undefined reference to `sc_core::sc_module::~sc_module()'
+incr_calc.cpp:(.text._ZN6soclib4caba8IncrCalcD0Ev[soclib::caba::IncrCalc::~IncrCalc()]+0x7c6): undefined reference to `sc_core::sc_module::~sc_module()'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::vbind(sc_core::sc_interface&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::vbind(sc_core::sc_interface&)]+0x2f): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::vbind(sc_core::sc_interface&)]+0x6d): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::vbind(sc_core::sc_port_base&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::vbind(sc_core::sc_port_base&)]+0x2d): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::vbind(sc_core::sc_port_base&)]+0x5a): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_port_base&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::add_interface(sc_core::sc_interface*)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::add_interface(sc_core::sc_interface*)]+0x2d): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::add_interface(sc_core::sc_interface*)]+0xae): undefined reference to `sc_core::SC_ID_BIND_IF_TO_PORT_'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::add_interface(sc_core::sc_interface*)]+0xb6): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_inout<float>::end_of_elaboration()':
+incr_calc.cpp:(.text._ZN7sc_core8sc_inoutIfE18end_of_elaborationEv[sc_core::sc_inout<float>::end_of_elaboration()]+0xba): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_thread_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_method_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::vbind(sc_core::sc_interface&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::vbind(sc_core::sc_interface&)]+0x2f): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::vbind(sc_core::sc_interface&)]+0x6d): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::vbind(sc_core::sc_port_base&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::vbind(sc_core::sc_port_base&)]+0x2d): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::vbind(sc_core::sc_port_base&)]+0x5a): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_port_base&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::add_interface(sc_core::sc_interface*)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::add_interface(sc_core::sc_interface*)]+0x2d): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::add_interface(sc_core::sc_interface*)]+0xae): undefined reference to `sc_core::SC_ID_BIND_IF_TO_PORT_'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::add_interface(sc_core::sc_interface*)]+0xb6): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_thread_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_method_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_signal<float>::register_port(sc_core::sc_port_base&, char const*)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_signalIfE13register_portERNS_12sc_port_baseEPKc[sc_core::sc_signal<float>::register_port(sc_core::sc_port_base&, char const*)]+0xd1): undefined reference to `sc_core::sc_signal_invalid_writer(sc_core::sc_object*, sc_core::sc_object*, sc_core::sc_object*)'
+incr_calc.o: In function `sc_core::sc_signal<float>::get_data_ref() const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_signalIfE12get_data_refEv[sc_core::sc_signal<float>::get_data_ref() const]+0xd): undefined reference to `sc_core::sc_deprecated_get_data_ref()'
+incr_calc.o: In function `sc_core::sc_signal<float>::trace(sc_core::sc_trace_file*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_signalIfE5traceEPNS_13sc_trace_fileE[sc_core::sc_signal<float>::trace(sc_core::sc_trace_file*) const]+0x17): undefined reference to `sc_core::sc_deprecated_trace()'
+incr_calc.o: In function `sc_core::sc_in<float>::vbind(sc_core::sc_port_base&)':
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIfE5vbindERNS_12sc_port_baseE[sc_core::sc_in<float>::vbind(sc_core::sc_port_base&)]+0x2d): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIfE5vbindERNS_12sc_port_baseE[sc_core::sc_in<float>::vbind(sc_core::sc_port_base&)]+0x53): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_port_base&)'
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIfE5vbindERNS_12sc_port_baseE[sc_core::sc_in<float>::vbind(sc_core::sc_port_base&)]+0x7b): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIfE5vbindERNS_12sc_port_baseE[sc_core::sc_in<float>::vbind(sc_core::sc_port_base&)]+0xa1): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_port_base&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::add_interface(sc_core::sc_interface*)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::add_interface(sc_core::sc_interface*)]+0x2d): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::add_interface(sc_core::sc_interface*)]+0xae): undefined reference to `sc_core::SC_ID_BIND_IF_TO_PORT_'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::add_interface(sc_core::sc_interface*)]+0xb6): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_in<float>::end_of_elaboration()':
+incr_calc.cpp:(.text._ZN7sc_core5sc_inIfE18end_of_elaborationEv[sc_core::sc_in<float>::end_of_elaboration()]+0x7a): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_thread_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_method_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::vbind(sc_core::sc_interface&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::vbind(sc_core::sc_interface&)]+0x2f): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::vbind(sc_core::sc_interface&)]+0x6d): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::vbind(sc_core::sc_port_base&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::vbind(sc_core::sc_port_base&)]+0x2d): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIfEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_in_if<float> >::vbind(sc_core::sc_port_base&)]+0x5a): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_port_base&)'
+incr_calc.o: In function `sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::~sc_event_finder_t()':
+incr_calc.cpp:(.text._ZN7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEED1Ev[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::~sc_event_finder_t()]+0x1f): undefined reference to `sc_core::sc_event_finder::~sc_event_finder()'
+incr_calc.o: In function `sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::~sc_event_finder_t()':
+incr_calc.cpp:(.text._ZN7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEED0Ev[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::~sc_event_finder_t()]+0x1f): undefined reference to `sc_core::sc_event_finder::~sc_event_finder()'
+incr_calc.o: In function `sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::find_event(sc_core::sc_interface*) const':
+incr_calc.cpp:(.text._ZNK7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEE10find_eventEPNS_12sc_interfaceE[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::find_event(sc_core::sc_interface*) const]+0x34): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZNK7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEE10find_eventEPNS_12sc_interfaceE[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::find_event(sc_core::sc_interface*) const]+0x76): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZNK7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEE10find_eventEPNS_12sc_interfaceE[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::find_event(sc_core::sc_interface*) const]+0x97): undefined reference to `sc_core::SC_ID_FIND_EVENT_'
+incr_calc.cpp:(.text._ZNK7sc_core17sc_event_finder_tINS_15sc_signal_in_ifIbEEE10find_eventEPNS_12sc_interfaceE[sc_core::sc_event_finder_t<sc_core::sc_signal_in_if<bool> >::find_event(sc_core::sc_interface*) const]+0x9f): undefined reference to `sc_core::sc_event_finder::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::vbind(sc_core::sc_interface&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::vbind(sc_core::sc_interface&)]+0x2f): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE5vbindERNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::vbind(sc_core::sc_interface&)]+0x6d): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::vbind(sc_core::sc_port_base&)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::vbind(sc_core::sc_port_base&)]+0x2d): undefined reference to `typeinfo for sc_core::sc_port_base'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE5vbindERNS_12sc_port_baseE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::vbind(sc_core::sc_port_base&)]+0x5a): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_port_base&)'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::add_interface(sc_core::sc_interface*)':
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::add_interface(sc_core::sc_interface*)]+0x2d): undefined reference to `typeinfo for sc_core::sc_interface'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::add_interface(sc_core::sc_interface*)]+0xae): undefined reference to `sc_core::SC_ID_BIND_IF_TO_PORT_'
+incr_calc.cpp:(.text._ZN7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE13add_interfaceEPNS_12sc_interfaceE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::add_interface(sc_core::sc_interface*)]+0xb6): undefined reference to `sc_core::sc_port_base::report_error(char const*, char const*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_thread_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE14make_sensitiveEPNS_17sc_thread_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_thread_process*, sc_core::sc_event_finder*) const'
+incr_calc.o: In function `sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const':
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xd0): undefined reference to `sc_core::sc_port_base::add_static_event(sc_core::sc_method_process*, sc_core::sc_event const&) const'
+incr_calc.cpp:(.text._ZNK7sc_core9sc_port_bINS_15sc_signal_in_ifIbEEE14make_sensitiveEPNS_17sc_method_processEPNS_15sc_event_finderE[sc_core::sc_port_b<sc_core::sc_signal_in_if<bool> >::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const]+0xfe): undefined reference to `sc_core::sc_port_base::make_sensitive(sc_core::sc_method_process*, sc_core::sc_event_finder*) const'
+top.o: In function `sc_main':
+top.cpp:(.text+0x12f): undefined reference to `sc_core::sc_create_vcd_trace_file(char const*)'
+top.cpp:(.text+0x201): undefined reference to `sc_core::sc_module_name::sc_module_name(char const*)'
+top.cpp:(.text+0x22a): undefined reference to `sc_core::sc_module_name::~sc_module_name()'
+top.cpp:(.text+0x241): undefined reference to `sc_core::sc_module_name::~sc_module_name()'
+top.cpp:(.text+0xcae): undefined reference to `sc_core::sc_close_vcd_trace_file(sc_core::sc_trace_file*)'
+top.cpp:(.text+0xcf4): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+top.cpp:(.text+0xd0b): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+top.cpp:(.text+0xd21): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+top.cpp:(.text+0xd38): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+top.cpp:(.text+0xd4e): undefined reference to `sc_core::sc_signal<bool>::~sc_signal()'
+top.o:top.cpp:(.text+0xd65): more undefined references to `sc_core::sc_signal<bool>::~sc_signal()' follow
+top.o: In function `__static_initialization_and_destruction_0(int, int)':
+top.cpp:(.text+0x16a7): undefined reference to `sc_core::sc_api_version_2_2_0::sc_api_version_2_2_0()'
+top.o: In function `sc_core::sc_start(double, sc_core::sc_time_unit)':
+top.cpp:(.text._ZN7sc_core8sc_startEdNS_12sc_time_unitE[sc_core::sc_start(double, sc_core::sc_time_unit)]+0x22): undefined reference to `sc_core::sc_time::sc_time(double, sc_core::sc_time_unit)'
+top.cpp:(.text._ZN7sc_core8sc_startEdNS_12sc_time_unitE[sc_core::sc_start(double, sc_core::sc_time_unit)]+0x2e): undefined reference to `sc_core::sc_start(sc_core::sc_time const&)'
+top.o: In function `sc_core::sc_in<bool>::operator()(sc_core::sc_signal_in_if<bool> const&)':
+top.cpp:(.text._ZN7sc_core5sc_inIbEclERKNS_15sc_signal_in_ifIbEE[sc_core::sc_in<bool>::operator()(sc_core::sc_signal_in_if<bool> const&)]+0x30): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+top.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::operator()(sc_core::sc_signal_inout_if<float>&)':
+top.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIfEEEclERS2_[sc_core::sc_port_b<sc_core::sc_signal_inout_if<float> >::operator()(sc_core::sc_signal_inout_if<float>&)]+0x30): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+top.o: In function `sc_core::sc_in<float>::operator()(sc_core::sc_signal_in_if<float> const&)':
+top.cpp:(.text._ZN7sc_core5sc_inIfEclERKNS_15sc_signal_in_ifIfEE[sc_core::sc_in<float>::operator()(sc_core::sc_signal_in_if<float> const&)]+0x30): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+top.o: In function `sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::operator()(sc_core::sc_signal_inout_if<bool>&)':
+top.cpp:(.text._ZN7sc_core9sc_port_bINS_18sc_signal_inout_ifIbEEEclERS2_[sc_core::sc_port_b<sc_core::sc_signal_inout_if<bool> >::operator()(sc_core::sc_signal_inout_if<bool>&)]+0x30): undefined reference to `sc_core::sc_port_base::bind(sc_core::sc_interface&)'
+collect2: ld returned 1 exit status

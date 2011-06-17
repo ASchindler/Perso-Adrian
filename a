@@ -1,0 +1,1 @@
+g++ -Wno-deprecated -I/comelec/softs/opt/systemc-2.2.0/include -I . -c top.cpp
