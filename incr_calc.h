@@ -5,6 +5,7 @@
 #define NO_TILES 1200
 
 #include "systemc.h"
+#include "mfixed.h"
 
 using namespace sc_core;
 using namespace std;
@@ -42,57 +43,57 @@ namespace soclib { namespace caba {
 		sc_in<bool>         r1_valid;
 		sc_in<bool>         s0_valid;
 		sc_in<bool>         load;
-		sc_in<float>          p0_in;		
-		sc_in<float>          q0_in;
-		sc_in<float>          q1_in;
-		sc_in<float>          q2_in;
-		sc_in<float>          q3_in;
-		sc_in<float>          r0_in;
-		sc_in<float>          r1_in;
-		sc_in<float>          r2_in;
-		sc_in<float>          s0_in;
-		sc_in<float>          s1_in;
+		sc_in<mfixed>          p0_in;		
+		sc_in<mfixed>          q0_in;
+		sc_in<mfixed>          q1_in;
+		sc_in<mfixed>          q2_in;
+		sc_in<mfixed>          q3_in;
+		sc_in<mfixed>          r0_in;
+		sc_in<mfixed>          r1_in;
+		sc_in<mfixed>          r2_in;
+		sc_in<mfixed>          s0_in;
+		sc_in<mfixed>          s1_in;
 		
 		sc_signal<bool> wait_cyc; //wait one cycle for signal to be valid
 		
 		/* registres */
 
-		float q0;  //constante	
-		sc_signal<float> q1;
+		mfixed q0;  //constante	
+		sc_signal<mfixed> q1;
 
-		sc_signal<float> q2;
+		sc_signal<mfixed> q2;
 
-		sc_signal<float> q3;
-
-
-		float r0;  //constante
-		sc_signal<float> r1;
-		sc_signal<float> r2;
+		sc_signal<mfixed> q3;
 
 
-		float s0; //constante
-		sc_signal<float> s1;
+		mfixed r0;  //constante
+		sc_signal<mfixed> r1;
+		sc_signal<mfixed> r2;
 
-		float p0; //constante
 
-		sc_signal<float> p1;
+		mfixed s0; //constante
+		sc_signal<mfixed> s1;
 
-		sc_signal<float> p1_l;
+		mfixed p0; //constante
 
-		sc_signal<float> p2;
+		sc_signal<mfixed> p1;
 
-		sc_signal<float> p2_l;
+		sc_signal<mfixed> p1_l;
 
-		sc_signal<float> p3;
+		sc_signal<mfixed> p2;
 
-		sc_signal<float> p3_l;
+		sc_signal<mfixed> p2_l;
+
+		sc_signal<mfixed> p3;
+
+		sc_signal<mfixed> p3_l;
 			
 		sc_out<bool> o_valid;
 		sc_out<bool> o_finished;
 		
-                sc_out<float>   x_3;
-                sc_out<float>   x_2;
-                sc_out<float>   x_1;
+                sc_out<mfixed>   x_3;
+                sc_out<mfixed>   x_2;
+                sc_out<mfixed>   x_1;
 
 		IncrCalc(sc_module_name insname);
 

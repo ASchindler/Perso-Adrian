@@ -1,5 +1,19 @@
 #include "mfixed.h"
 
+inline mfixed mfixed1 (int A)
+{
+  mfixed new1;
+  new1.h = (short)A;
+  return new1;
+}
+
+inline void fx_copy (mfixed A, mfixed B)
+{
+  B.l = A.l;
+  B.h = A.h;
+}
+
+
 // fixed point multiplication
 inline mfixed fx_mul  (mfixed A, mfixed B)
 {

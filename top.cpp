@@ -10,46 +10,56 @@ extern "C"
 void next_cycle (sc_signal<bool> &signal_clk);
 void calc_coeffs (int i, int j);
 
-float a30 = pow(2,-15);
-float a20 = pow(-3.2,-8);
-float a10 = 2;
-float a00 = 0;
-float a21 = 0;
-float a11 = pow(-2,-7);
-float a01 = 1;
-float a12 =  pow(2,-15);
-float a02 = pow(-2,-8);
-float a03 = 0;
+mfixed a30;
+a30.l = (short)00003051757;//pow(2,-15);
+a30.h = (unsiged short)0;
+mfixed a20 = mfixed(0.00009094947);//pow(-3.2,-8);
+mfixed a10 = mfixed1(2);
+mfixed a00 = mfixed1(0);
+mfixed a21 = mfixed1(0);
+mfixed a11 = mfixed(-0.0078125);//pow(-2,-7);
+mfixed a01 = mfixed1(1);
+mfixed a12 = mfixed(-0.00003051757);// pow(2,-15);
+mfixed a02 = mfixed(0.00390625);//pow(-2,-8);
+mfixed a03 = mfixed1(0);
 
-    sc_signal<float> p0;
-    sc_signal<float> p1;
-    sc_signal<float> p2;
-    sc_signal<float> p3;
-    sc_signal<float> q0;
-    sc_signal<float> q1;
-    sc_signal<float> q2;
-    sc_signal<float> q3;
-    sc_signal<float> r0;
-    sc_signal<float> r1;
-    sc_signal<float> r2;
-    sc_signal<float> s0;
-    sc_signal<float> s1;
+    sc_signal<mfixed> p0;
+    sc_signal<mfixed> p1;
+    sc_signal<mfixed> p2;
+    sc_signal<mfixed> p3;
+    sc_signal<mfixed> q0;
+    sc_signal<mfixed> q1;
+    sc_signal<mfixed> q2;
+    sc_signal<mfixed> q3;
+    sc_signal<mfixed> r0;
+    sc_signal<mfixed> r1;
+    sc_signal<mfixed> r2;
+sc_signal<mfixed> r2_c1;
+sc_signal<mfixed> r2_c2;
+sc_signal<mfixed> q1_c1;
+sc_signal<mfixed> q2_c2;
+
+mfixed x2, y2, x3, y3;
+
+    sc_signal<mfixed> s0;
+    sc_signal<mfixed> s1;
 
 int sc_main(int argc, char *argv[])
 {
     using namespace sc_core;
     using namespace soclib::caba;    
 
+
     int i, j;
-    float x, y;
-    float x_norm, y_norm;
-    float x_exp;
+    mfixed x, y;
+    mfixed x_norm, y_norm;
+    mfixed x_exp;
 
     sc_signal<bool> clk;
     sc_signal<bool> reset_n;
-    sc_signal<float> x_3;
-    sc_signal<float> x_2;
-    sc_signal<float> x_1;
+    sc_signal<mfixed> x_3;
+    sc_signal<mfixed> x_2;
+    sc_signal<mfixed> x_1;
     sc_signal<bool> x_valid;
     sc_signal<bool> p0_valid;    
     sc_signal<bool> q0_valid;
@@ -71,9 +81,6 @@ int sc_main(int argc, char *argv[])
         sc_create_vcd_trace_file ("incr_calc_trace");
     sc_trace(my_trace_file, clk, "clk");
     sc_trace(my_trace_file, reset_n, "reset");
-    sc_trace(my_trace_file, x_3, "x_3");
-    sc_trace(my_trace_file, x_2, "x_2");
-    sc_trace(my_trace_file, x_1, "x_1");
     sc_trace(my_trace_file, x_valid, "valid");
     sc_trace(my_trace_file, finished, "finished");
 
@@ -121,6 +128,13 @@ int sc_main(int argc, char *argv[])
     y = 0;
     x_exp = 0;
 
+
+    x2 = fx_mul(x,x);
+    x3 = fx_mul(x2,x);
+
+    y2 = fx_mul(y,y);
+    y3 = fx_mul(y2,y);
+
     //for each tile
     for(j=0; j<30; j++) //30 vertically
 	for(i=0; i<40; i++) //40 horizontally
@@ -156,7 +170,8 @@ int sc_main(int argc, char *argv[])
 	    next_cycle(clk);
 	    while(x_valid && !finished)
 	    {
-		x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
+	      //x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
+	      x_exp = fx_add(fx_mul(a30,x3),fx_add(fx_mul(a21,fx_mul(x2,y)),fx_add(fx_mul(a12,fx_mul(x,y2)),fx_add(fx_mul(a03,y3),fx_add(fx_mul(a20,x2),fx_add(fx_mul(a11,fx_mul(x,y)),fx_add(fx_mul(a02,y2),fx_add(fx_mul(a10,x),fx_add(fx_mul(a01,y),a00)))))))));
 		cout << "x : " << x << " y: " << y << endl;
 		next_cycle(clk);
 		cout << " -------------- " << endl;
@@ -190,37 +205,54 @@ void next_cycle (sc_signal<bool> &signal_clk)
 void calc_coeffs (int i, int j)
 {
     cout << "calc i " <<  i << " j " << j << endl;
-    s0 = 2*a21;
-    r0 = 2*a12;
-    q0 = 6*a03;
-    p0 = 6*a30;
+    s0 = fx_mul(mfixed1(2),(a21));
+    r0 = fx_mul(mfixed1(2),(a12));
+    q0 = fx_mul(mfixed1(6),(a03));
+    p0 = fx_mul(mfixed1(6),a30);
 
-    float x = (16 * i);
-    float y = (16 * j);
+    mfixed x = fx_mul(mfixed1(16),i);
+    mfixed y = fx_mul(mfixed1(16),j);
+
+    r2_c1 = fx_add(fx_mul(mfixed1(3),a30),fx_mul(mfixed1(2),a20));
+       
+    r2_c2 = fx_add(a21,a11);
+
+       
+    q2_c1 = fx_add(a12,a11);
+      
+    q2_c2 = fx_add(fx_mul(mfixed1(3),a03),fx_mul(mfixed1(2),a02));
 
     cout << "foo" << endl;
     
     /*      c00          + 16*i*c10       + 16*j*c01         + s0 * j */
-    s1 = (6*a30 + 2*a20) + 6*a30 * x + 2 * a21 * y;// + 2*a21 * 16 * j;
+    //s1 = (6*a30 + 2*a20) + 6*a30 * x + 2 * a21 * y;// + 2*a21 * 16 * j;
 
-    /*    r1                                           +   r0 * 16 j  */
-    r1 = 2*a12 * x + 2*a12 * y + a12 + a21 + a11 + 2*a12 * y;
+
+  s1 = fx_add(fx_mul(mifxed(6),a30),fx_add(fx_mul(mfixed1(2),a20),fx_add(fx_mul(mifxed(6),fx_mul(a30,x)),fx_mul(mfixed1(2),fx_mul(a21,y)))));
+
+    /*    r1                                           +   r0 * 16  */
+    //r1 = 2*a12 * x + 2*a12 * y + a12 + a21 + a11 + 2*a12 * y;
+ r1 = fx_add(fx_mul(mfixed1(2),fx_mul(a12,x)),fx_add(fx_mul(mfixed1(2),fx_mul(a12,y)),fx_add(a12,(fx_add(a21,(fx_add(a11,(fx_mul(mfixed1(2),fx_mul(a12,y)))))))));
 
     //mfixed r2_max = pow((IMAGE_WIDTH),2) * 3*a30 + 2*a21*IMAGE_HEIGHT*IMAGE_WIDTH + a12 * pow((IMAGE_HEIGHT),2) + (3*a30+2*a20)*IMAGE_WIDTH + (a21+a11) * IMAGE_HEIGHT + (a30 + a20 + a10); 
 
-    r2 = pow((x),2) * 3*a30 + 2*a21*y*x + a12 * pow((y),2) + (3*a30+2*a20)*x + (a21+a11) * y + (a30 + a20 + a10); //+ /*16*j*r1*/ (16*j) * (2*a12 * 16*i + 2*a12 * 16*j + a12 + a21 + a11 + 2*a12 * 16*j);
-   
+    //r2 = pow((x),2) * 3*a30 + 2*a21*y*x + a12 * pow((y),2) + (3*a30+2*a20)*x + (a21+a11) * y + (a30 + a20 + a10); //+ /*16*j*r1*/ (16*j) * (2*a12 * 16*i + 2*a12 * 16*j + a12 + a21 + a11 + 2*a12 * 16*j);
+	     r2 = fx_add(fx_mul(x2,fx_mul(3,a30)),fx_add(fx_mul(mfixed1(2),fx_mul(a21,fx_mul(y,x))),fx_add(fx_mul(a12,y2),fx_add(fx_mul(r2_c1,x),fx_add(fx_mul(r2_c2,y),fx_add(a30,(fx_add(a20,(a10)))))))));
+
     //r2 = r2 / r2_max;
 
-    q1 = 2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y;
+	     //   q1 = 2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y;
+	     q1 = fx_add(fx_mul(mfixed1(2),fx_mul(a12,x)),fx_add(fx_mul(mifxed(6),fx_mul(a03,y)),fx_add(fx_mul(mifxed(6),a03),fx_add(fx_mul(mfixed1(2),a02),fx_mul(mifxed(6),fx_mul(a03,y))))));
 
     //float q2_max = a21 * pow((IMAGE_WIDTH),2) + 2*a12*(IMAGE_WIDTH)*(IMAGE_HEIGHT) + 3*a03*pow((IMAGE_HEIGHT),2) + (a12 + a11)*(IMAGE_WIDTH) + (3*a03 + 2*a02) * (IMAGE_HEIGHT) + (a03 + a02 + a01) + /*16*j * q1 */ (IMAGE_HEIGHT) * (2*a12 * IMAGE_WIDTH + 6*a03 * IMAGE_HEIGHT + 6*a03 + 2*a02 + 6*a03 * IMAGE_HEIGHT);
 
-    q2 = a21 * pow((x),2) + 2*a12*(x)*(y) + 3*a03*pow((y),2) + (a12 + a11)*(x) + (3*a03 + 2*a02) * (y) + (a03 + a02 + a01);// + /*16*j * q1 */ (y) * (2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y);
+	     // q2 = a21 * pow((x),2) + 2*a12*(x)*(y) + 3*a03*pow((y),2) + (a12 + a11)*(x) + (3*a03 + 2*a02) * (y) + (a03 + a02 + a01);// + /*16*j * q1 */ (y) * (2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y);
+	     q2 = fx_add(fx_mul(a21,x2),fx_add(fx_mul(mfixed1(2),fx_mul(a12,fx_mul(x,y ))),fx_add(fx_mul(3,fx_mul(a03,y2)),fx_add(fx_mul(q2_c1,x),fx_add(fx_mul(q2_c2,y),fx_add(a03,(fx_add(a02,(a01)))))))));
 
     //q2 = q2/q2_max;
 
-    q3 = a30 * pow((x),3) + a21 * pow((x),2) * y + a12 * x * pow((y),2) + a03*pow((y),3) + a20*pow((x),2) + a11*x*y + a02*pow((y),2) + a10*x + a01*y + a00;
+    //q3 = a30 * pow((x),3) + a21 * pow((x),2) * y + a12 * x * pow((y),2) + a03*pow((y),3) + a20*pow((x),2) + a11*x*y + a02*pow((y),2) + a10*x + a01*y + a00;
+	     q3 = fx_add(fx_mul(a30,x3),fx_add(fx_mul(a21,fx_mul(x2,y)),fx_add(fx_mul(a12,fx_mul(x,y2)),fx_add(fx_mul(a03,y3),fx_add(fx_mul(a20,x2),fx_add(fx_mul(a11,fx_mul(x,y)),fx_add(fx_mul(a02,y2),fx_add(fx_mul(a10,x),fx_add(fx_mul(a01,y),a00)))))))));
 
     //float q3_max =a30 * pow((IMAGE_WIDTH),3) + a21 * pow((IMAGE_WIDTH),2) * IMAGE_HEIGHT + a12 * IMAGE_WIDTH * pow((IMAGE_HEIGHT),2) + a03*pow((IMAGE_HEIGHT),3) + a20*pow((IMAGE_WIDTH),2) + a11*IMAGE_WIDTH*IMAGE_HEIGHT + a02*pow((IMAGE_HEIGHT),2) + a10*IMAGE_WIDTH + a01*IMAGE_HEIGHT + a00;
 

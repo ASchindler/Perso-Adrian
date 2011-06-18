@@ -21,6 +21,9 @@ typedef union {
     int all;
 }mfixed;
 
+void fx_copy (mfixed A, mfixed B);
+
+mfixed mfixed1 (int A);
 
 // fixed point multiplication
 mfixed fx_mul  (mfixed A, mfixed B);
