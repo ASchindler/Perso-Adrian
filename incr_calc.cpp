@@ -45,7 +45,7 @@ namespace soclib { namespace caba {
 		    o_valid = 0;
 		    o_finished = 0;
 		    //wait_cyc = 1;
-		    x_3 = mfixed1(0);
+		    x_3 = mfixed(0);
 
 		    
 		    // ne changent pas !!
@@ -70,20 +70,20 @@ namespace soclib { namespace caba {
 			if(load && ((q0_valid & q1_valid & q2_valid & r0_valid & r1_valid & s0_valid & p0_valid)))
 			{
 			    state = 1;
-			    fx_copy(p0, p0_in);
-			    fx_copy(q0 , q0_in);
-			    fx_copy(q1 , q1_in);
-			    fx_copy(q2 , q2_in);
-			    fx_copy(q3 , q3_in);
-			    fx_copy(r0 , r0_in);
-			    fx_copy(r1 , r1_in);
-			    fx_copy(r2 , r2_in);
-			    fx_copy(s0 , s0_in);
-			    fx_copy(s1 , s1_in);
+			    p0 = p0_in;
+ 			    q0 = q0_in;
+ 			    q1 = q1_in;
+ 			    q2 = q2_in;
+ 			    q3 = q3_in;
+ 			    r0 = r0_in;
+ 			    r1 = r1_in;
+ 			    r2 = r2_in;
+ 			    s0 = s0_in;
+ 			    s1 = s1_in;
 			}
-			   fx_copy( x_3 , p3);
-			    fx_copy(x_2 , p2);
-			    fx_copy(x_1 , p1);
+			x_3 = p3;
+			x_2 = p2;
+			x_1 = p1;
 			wait();
 			break;
 		    }
@@ -91,32 +91,32 @@ namespace soclib { namespace caba {
 			if(!load)
 			{
 			    o_valid = 1;
-			    fx_copy(x_3 , p3);
-			    fx_copy(x_2 , p2);
-			    fx_copy(x_1 , p1);
+			    x_3 = p3;
+			    x_2 = p2;
+			    x_1 = p1;
 
 			    cout << "Coproc " << lin << " " << col << endl;
 
 			    if(col == 0)
 			    {
-			      fx_copy(p3 , q3);
-				fx_copy(p2 , r2);
-				fx_copy(p1 , s1);
-
-				fx_copy(q3 , fx_add(q3,q2));
-				fx_copy(q2 , fx_add(q2,q1));
-				fx_copy(q1 , fx_add(q1,q0));
-
-				fx_copy(r2 , fx_add(r2,r1));
-				fx_copy(r1 , fx_add(r1,r0));
-
-				fx_copy(s1 , fx_add(s1,s0));
+				p3 = q3;
+				p2 = r2;
+				p1 = s1;
+ 
+				q3 = q3 + q2;
+				//q2 = q2 + q1;
+				//q1 = q1 + q0;
+ 
+				//r2 = r2 + r1;
+				//r1 = r1 + r0;
+ 
+				//s1 = s1 + s0; 
 			    }
 			    else
 			    {
-			      fx_copy(p3 , fx_add(p3, p2));
-			      fx_copy(p2 , fx_add(p2, p1));
-			      fx_copy(p1 , fx_add(p1, p0));
+				p3 = p3 + p2;
+				p2 = p2 + p1;
+				p1 = p1 + p0;
 			    }
 			    /*if(col == 1)
 			    {
@@ -147,9 +147,9 @@ namespace soclib { namespace caba {
 		    case 2: {
 			o_finished = 1;
 			state = 0;
-			fx_copy(x_3 , mfixed1(0));
-			fx_copy(x_2 , mfixed1(0));
-			fx_copy(x_1 , mfixed1(0));
+			x_3 = mfixed(0);
+			x_2 = mfixed(0);
+			x_1 = mfixed(0);
 			wait();
 			break;
 		    }break;

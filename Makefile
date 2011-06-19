@@ -5,9 +5,10 @@ LIBS = -lsystemc
 LFLAGS = -Wno-deprecated -L$(SYSTEMC)lib-linux64
 CFLAGS = -Wno-deprecated -I$(SYSTEMC)include -I .
 
-cfiles = $(wildcard *.c)
+#cfiles = $(wildcard *.c)
 cppfiles = $(wildcard *.cpp)
-ofiles = $(cfiles:.c=.o) $(cppfiles:.cpp=.o)
+ofiles = $(cppfiles:.cpp=.o)
+#ofiles = $(cfiles:.c=.o) $(cppfiles:.cpp=.o)
 
 TARGET = a.out
 
@@ -18,11 +19,11 @@ all : $(ofiles) $(TARGET)
 $(TARGET) : $(ofiles)
 	$(CPP) $(LFLAGS) $^ -o $@ $(LIBS)
 
-%.o : %.c %.h
-	$(CC) -c $(CFLAGS) $^
+#%.o : %.c %.h
+#	$(CC) -c $(CFLAGS) $^
 
-%.o : .%c
-	$(CC) -c $(CFLAGS) $^
+#%.o : .%c
+#	$(CC) -c $(CFLAGS) $^
 
 %.o : %.cpp %.h
 	$(CPP) $(CFLAGS) -c $^

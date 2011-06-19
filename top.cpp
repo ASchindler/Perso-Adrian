@@ -1,27 +1,26 @@
 #include "systemc.h"
 #include "incr_calc.h"
 
-extern "C"
+/*extern "C"
 {
 #include "mfixed.h"
-}
+}*/
 #include <cmath>
 
 void next_cycle (sc_signal<bool> &signal_clk);
 void calc_coeffs (int i, int j);
 
-mfixed a30;
-a30.l = (short)00003051757;//pow(2,-15);
-a30.h = (unsiged short)0;
-mfixed a20 = mfixed(0.00009094947);//pow(-3.2,-8);
-mfixed a10 = mfixed1(2);
-mfixed a00 = mfixed1(0);
-mfixed a21 = mfixed1(0);
-mfixed a11 = mfixed(-0.0078125);//pow(-2,-7);
-mfixed a01 = mfixed1(1);
-mfixed a12 = mfixed(-0.00003051757);// pow(2,-15);
-mfixed a02 = mfixed(0.00390625);//pow(-2,-8);
-mfixed a03 = mfixed1(0);
+mfixed a30 = (mfixed)(int) ((pow(2,-15))  * (1<<16));
+//mfixed(0,3051757);//pow(2,-15);
+mfixed a20 = (mfixed)(int) (pow(-3.2,-8)  * (1<<16));//mfixed(0,9094947);//
+mfixed a10 = (mfixed)(int) (2  * (1<<16));
+mfixed a00 = (mfixed)(int) (0  * (1<<16));
+mfixed a21 = (mfixed)(int) (0  * (1<<16));
+mfixed a11 = (mfixed)(int) (pow(-2,-7)  * (1<<16));//mfixed(-0,78125000);//pow(-2,-7);
+mfixed a01 = (mfixed)(int) (1  * (1<<16));
+mfixed a12 =  (mfixed)(int) (pow(2,-15) * (1<<16));// pow(2,-15);
+mfixed a02 =  (mfixed)(int) (pow(-2,-8)   * (1<<16));//mfixed(0,390625000);//pow(-2,-8);
+mfixed a03 = (mfixed)(int) (0  * (1<<16));
 
     sc_signal<mfixed> p0;
     sc_signal<mfixed> p1;
@@ -37,7 +36,9 @@ mfixed a03 = mfixed1(0);
 sc_signal<mfixed> r2_c1;
 sc_signal<mfixed> r2_c2;
 sc_signal<mfixed> q1_c1;
+sc_signal<mfixed> q1_c2;
 sc_signal<mfixed> q2_c2;
+sc_signal<mfixed> q2_c1;
 
 mfixed x2, y2, x3, y3;
 
@@ -124,9 +125,9 @@ int sc_main(int argc, char *argv[])
     next_cycle(clk);
     reset_n = true;
 
-    x = 0;
-    y = 0;
-    x_exp = 0;
+    x = mfixed(0);
+    y = mfixed(0);
+    x_exp = mfixed(0);
 
 
     x2 = fx_mul(x,x);
@@ -139,8 +140,8 @@ int sc_main(int argc, char *argv[])
     for(j=0; j<30; j++) //30 vertically
 	for(i=0; i<40; i++) //40 horizontally
 	{
-	    x = TILE_WIDTH * i;
-	    y = TILE_HEIGHT * j;
+	    x = fx_mul(mfixed(TILE_WIDTH),mfixed(i));
+	    y = fx_mul(mfixed(TILE_HEIGHT),mfixed(j));
 	    cout << "x : " << x << " y: " << y << endl;
 	    calc_coeffs(i, j);
 	    p0_valid = 1;
@@ -166,7 +167,7 @@ int sc_main(int argc, char *argv[])
 	    s0_valid = 0;
 	    s1_valid = 0;
 	    load = 0;
-	    x_exp = 0;
+	    x_exp = mfixed(0);
 	    next_cycle(clk);
 	    while(x_valid && !finished)
 	    {
@@ -175,15 +176,25 @@ int sc_main(int argc, char *argv[])
 		cout << "x : " << x << " y: " << y << endl;
 		next_cycle(clk);
 		cout << " -------------- " << endl;
-		cout << (float)x_exp << " " << ((float)x_3) << endl;
-		if(abs((x_3) - (x_exp))>0.01*abs(x_3))
-		    cout << "ERROR" << endl;
-		x++;
-		if (x==16*i+TILE_WIDTH)
+		cout << x_exp << " " << x_3 << endl;
+		//if(abs((x_3) - (x_exp))>0.01*abs(x_3))
+		//    cout << "ERROR" << endl;
+		x = fx_add(x,mfixed(1));
+		if (x == (fx_add(mfixed(TILE_WIDTH),(fx_mul(mfixed(16),mfixed(i))))))
 		{
-		    x = 16 * i;
-		    y++;    
+		    x = fx_mul(mfixed(16),mfixed(i));
+		    y = fx_add(y,mfixed(1));
 		}
+
+		x2 = fx_mul(x,x);
+		x3 = fx_mul(x2,x);
+
+		y2 = fx_mul(y,y);
+		y3 = fx_mul(y2,y);
+
+		cout << x2 << y2 << endl;
+
+		cout << "mul test" << fx_mul(mfixed(11),mfixed(11)) << endl;
 	    }
 	    cout << "--------- FINISHED TILE " << i << " " << j << endl;
 	}
@@ -205,22 +216,22 @@ void next_cycle (sc_signal<bool> &signal_clk)
 void calc_coeffs (int i, int j)
 {
     cout << "calc i " <<  i << " j " << j << endl;
-    s0 = fx_mul(mfixed1(2),(a21));
-    r0 = fx_mul(mfixed1(2),(a12));
-    q0 = fx_mul(mfixed1(6),(a03));
-    p0 = fx_mul(mfixed1(6),a30);
+    s0 = fx_mul(mfixed(2),(a21));
+    r0 = fx_mul(mfixed(2),(a12));
+    q0 = fx_mul(mfixed(6),(a03));
+    p0 = fx_mul(mfixed(6),a30);
 
-    mfixed x = fx_mul(mfixed1(16),i);
-    mfixed y = fx_mul(mfixed1(16),j);
+    mfixed x = fx_mul(mfixed(16),mfixed(i));
+    mfixed y = fx_mul(mfixed(16),mfixed(j));
 
-    r2_c1 = fx_add(fx_mul(mfixed1(3),a30),fx_mul(mfixed1(2),a20));
+    r2_c1 = fx_add(fx_mul(mfixed(3),a30),fx_mul(mfixed(2),a20));
        
     r2_c2 = fx_add(a21,a11);
 
        
     q2_c1 = fx_add(a12,a11);
       
-    q2_c2 = fx_add(fx_mul(mfixed1(3),a03),fx_mul(mfixed1(2),a02));
+    q2_c2 = fx_add(fx_mul(mfixed(3),a03),fx_mul(mfixed(2),a02));
 
     cout << "foo" << endl;
     
@@ -228,26 +239,26 @@ void calc_coeffs (int i, int j)
     //s1 = (6*a30 + 2*a20) + 6*a30 * x + 2 * a21 * y;// + 2*a21 * 16 * j;
 
 
-  s1 = fx_add(fx_mul(mifxed(6),a30),fx_add(fx_mul(mfixed1(2),a20),fx_add(fx_mul(mifxed(6),fx_mul(a30,x)),fx_mul(mfixed1(2),fx_mul(a21,y)))));
+  s1 = fx_add(fx_mul(mfixed(6),a30),fx_add(fx_mul(mfixed(2),a20),fx_add(fx_mul(mfixed(6),fx_mul(a30,x)),fx_mul(mfixed(2),fx_mul(a21,y)))));
 
     /*    r1                                           +   r0 * 16  */
     //r1 = 2*a12 * x + 2*a12 * y + a12 + a21 + a11 + 2*a12 * y;
- r1 = fx_add(fx_mul(mfixed1(2),fx_mul(a12,x)),fx_add(fx_mul(mfixed1(2),fx_mul(a12,y)),fx_add(a12,(fx_add(a21,(fx_add(a11,(fx_mul(mfixed1(2),fx_mul(a12,y)))))))));
+  r1 = fx_add(fx_mul(mfixed(2),fx_mul(a12,x)),fx_add(fx_mul(mfixed(2),fx_mul(a12,y)),fx_add(a12,(fx_add(a21,(fx_add(a11,(fx_mul(mfixed(2),fx_mul(a12,y))))))))));
 
     //mfixed r2_max = pow((IMAGE_WIDTH),2) * 3*a30 + 2*a21*IMAGE_HEIGHT*IMAGE_WIDTH + a12 * pow((IMAGE_HEIGHT),2) + (3*a30+2*a20)*IMAGE_WIDTH + (a21+a11) * IMAGE_HEIGHT + (a30 + a20 + a10); 
 
     //r2 = pow((x),2) * 3*a30 + 2*a21*y*x + a12 * pow((y),2) + (3*a30+2*a20)*x + (a21+a11) * y + (a30 + a20 + a10); //+ /*16*j*r1*/ (16*j) * (2*a12 * 16*i + 2*a12 * 16*j + a12 + a21 + a11 + 2*a12 * 16*j);
-	     r2 = fx_add(fx_mul(x2,fx_mul(3,a30)),fx_add(fx_mul(mfixed1(2),fx_mul(a21,fx_mul(y,x))),fx_add(fx_mul(a12,y2),fx_add(fx_mul(r2_c1,x),fx_add(fx_mul(r2_c2,y),fx_add(a30,(fx_add(a20,(a10)))))))));
+  r2 = fx_add(fx_mul(x2,fx_mul(mfixed(3),a30)),fx_add(fx_mul(mfixed(2),fx_mul(a21,fx_mul(y,x))),fx_add(fx_mul(a12,y2),fx_add(fx_mul(r2_c1,x),fx_add(fx_mul(r2_c2,y),fx_add(a30,(fx_add(a20,(a10)))))))));
 
     //r2 = r2 / r2_max;
 
 	     //   q1 = 2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y;
-	     q1 = fx_add(fx_mul(mfixed1(2),fx_mul(a12,x)),fx_add(fx_mul(mifxed(6),fx_mul(a03,y)),fx_add(fx_mul(mifxed(6),a03),fx_add(fx_mul(mfixed1(2),a02),fx_mul(mifxed(6),fx_mul(a03,y))))));
+	     q1 = fx_add(fx_mul(mfixed(2),fx_mul(a12,x)),fx_add(fx_mul(mfixed(6),fx_mul(a03,y)),fx_add(fx_mul(mfixed(6),a03),fx_add(fx_mul(mfixed(2),a02),fx_mul(mfixed(6),fx_mul(a03,y))))));
 
     //float q2_max = a21 * pow((IMAGE_WIDTH),2) + 2*a12*(IMAGE_WIDTH)*(IMAGE_HEIGHT) + 3*a03*pow((IMAGE_HEIGHT),2) + (a12 + a11)*(IMAGE_WIDTH) + (3*a03 + 2*a02) * (IMAGE_HEIGHT) + (a03 + a02 + a01) + /*16*j * q1 */ (IMAGE_HEIGHT) * (2*a12 * IMAGE_WIDTH + 6*a03 * IMAGE_HEIGHT + 6*a03 + 2*a02 + 6*a03 * IMAGE_HEIGHT);
 
 	     // q2 = a21 * pow((x),2) + 2*a12*(x)*(y) + 3*a03*pow((y),2) + (a12 + a11)*(x) + (3*a03 + 2*a02) * (y) + (a03 + a02 + a01);// + /*16*j * q1 */ (y) * (2*a12 * x + 6*a03 * y + 6*a03 + 2*a02 + 6*a03 * y);
-	     q2 = fx_add(fx_mul(a21,x2),fx_add(fx_mul(mfixed1(2),fx_mul(a12,fx_mul(x,y ))),fx_add(fx_mul(3,fx_mul(a03,y2)),fx_add(fx_mul(q2_c1,x),fx_add(fx_mul(q2_c2,y),fx_add(a03,(fx_add(a02,(a01)))))))));
+	     q2 = fx_add(fx_mul(a21,x2),fx_add(fx_mul(mfixed(2),fx_mul(a12,fx_mul(x,y))),fx_add(fx_mul(mfixed(3),fx_mul(a03,y2)),fx_add(fx_mul(q2_c1,x),fx_add(fx_mul(q2_c2,y),fx_add(a03,(fx_add(a02,(a01)))))))));
 
     //q2 = q2/q2_max;
 

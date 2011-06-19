@@ -1,0 +1,32 @@
+#include "mfixed.h"
+
+inline mfixed mfixed1 (int A)
+{
+  mfixed new1;
+  new1.h = (short)A;
+  return new1;
+}
+
+inline void fx_copy (mfixed A, mfixed B)
+{
+  B.l = A.l;
+  B.h = A.h;
+}
+
+
+// fixed point multiplication
+inline mfixed fx_mul  (mfixed A, mfixed B)
+{
+
+    return (mfixed)( ((A.l*B.l)>> 16) +
+            (A.l * B.h )    +
+            (A.h * B.l )    +
+            ((A.h*B.h) << 16)
+            );
+}
+
+// fixed point addition
+inline mfixed fx_add (mfixed A, mfixed B)
+{
+    return (mfixed)(A.all + B.all);
+}
