@@ -2,8 +2,8 @@
 
 class mfixed {
   private:
-    short h;
-    unsigned short l;
+    unsigned short h;
+    short l;
   public:
 
     // constructor
@@ -12,6 +12,8 @@ class mfixed {
     mfixed(int, int );
     
     mfixed(int);
+
+    mfixed(double);
 
 
     bool operator == (const mfixed & rhs) const;
@@ -26,6 +28,7 @@ class mfixed {
 
     void fx_copy (mfixed A, mfixed B);
 
+    friend float to_float(mfixed A);
 
 // fixed point multiplication
     friend mfixed fx_mul  (mfixed A, mfixed B);

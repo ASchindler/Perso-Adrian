@@ -10,17 +10,17 @@
 void next_cycle (sc_signal<bool> &signal_clk);
 void calc_coeffs (int i, int j);
 
-mfixed a30 = (mfixed)(int) ((pow(2,-15))  * (1<<16));
+mfixed a30 = (mfixed(pow(2,-15)));
 //mfixed(0,3051757);//pow(2,-15);
-mfixed a20 = (mfixed)(int) (pow(-3.2,-8)  * (1<<16));//mfixed(0,9094947);//
-mfixed a10 = (mfixed)(int) (2  * (1<<16));
-mfixed a00 = (mfixed)(int) (0  * (1<<16));
-mfixed a21 = (mfixed)(int) (0  * (1<<16));
-mfixed a11 = (mfixed)(int) (pow(-2,-7)  * (1<<16));//mfixed(-0,78125000);//pow(-2,-7);
-mfixed a01 = (mfixed)(int) (1  * (1<<16));
-mfixed a12 =  (mfixed)(int) (pow(2,-15) * (1<<16));// pow(2,-15);
-mfixed a02 =  (mfixed)(int) (pow(-2,-8)   * (1<<16));//mfixed(0,390625000);//pow(-2,-8);
-mfixed a03 = (mfixed)(int) (0  * (1<<16));
+mfixed a20 = (mfixed(pow(-3.2,-8)));//mfixed(0,9094947);//
+mfixed a10 = (mfixed(2));
+mfixed a00 = (mfixed(0));
+mfixed a21 = (mfixed(0));
+mfixed a11 = (mfixed(pow(-2,-7)));//mfixed(-0,78125000);//pow(-2,-7);
+mfixed a01 = (mfixed(1));
+mfixed a12 = (mfixed(pow(2,-15)));// pow(2,-15);
+mfixed a02 = (mfixed(pow(-2,-8)));//mfixed(0,390625000);//pow(-2,-8);
+mfixed a03 = (mfixed(0));
 
     sc_signal<mfixed> p0;
     sc_signal<mfixed> p1;
@@ -177,8 +177,8 @@ int sc_main(int argc, char *argv[])
 		next_cycle(clk);
 		cout << " -------------- " << endl;
 		cout << x_exp << " " << x_3 << endl;
-		//if(abs((x_3) - (x_exp))>0.01*abs(x_3))
-		//    cout << "ERROR" << endl;
+		if((to_float(x_3) - to_float(x_exp))>0.03*to_float(x_3))
+		    cout << "ERROR" << endl;
 		x = fx_add(x,mfixed(1));
 		if (x == (fx_add(mfixed(TILE_WIDTH),(fx_mul(mfixed(16),mfixed(i))))))
 		{
@@ -192,9 +192,9 @@ int sc_main(int argc, char *argv[])
 		y2 = fx_mul(y,y);
 		y3 = fx_mul(y2,y);
 
-		cout << x2 << y2 << endl;
+		//cout << x2 << y2 << endl;
 
-		cout << "mul test" << fx_mul(mfixed(11),mfixed(11)) << endl;
+		//cout << "mul test" << fx_mul(mfixed(1.5),mfixed(3.5)) << endl;
 	    }
 	    cout << "--------- FINISHED TILE " << i << " " << j << endl;
 	}

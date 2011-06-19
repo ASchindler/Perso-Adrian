@@ -8,15 +8,22 @@ mfixed::mfixed ()
 
 mfixed::mfixed(int a)
 {
-    h = a;
-    l = 0;
+    l = a;
+    h = 0;
 }
 
  mfixed::mfixed (int a, int b) 
 {
-    h = a;
-    l = b;
+    l = a;
+    h = b;
     }
+
+ mfixed::mfixed (double a) 
+{
+    l = (int)(a);// && 0xFFFF0000));
+    h = (short)((int)(a * (1<<16)));
+    //printf ("A   0x%x 0x%x\n", h, l);
+}
 
 
 bool mfixed::operator == (const mfixed & rhs) const {
@@ -47,12 +54,38 @@ void sc_trace(sc_trace_file *tf, const mfixed & v,
 // fixed point multiplication
 mfixed fx_mul  (mfixed A, mfixed B)
 {
+    mfixed temp;
+    temp.l =  ((A.l*B.l) +
+	       (A.l * B.h ) * (1 >> 16)  +
+	       (A.h * B.l ) * (1 << 16)  +
+	       (A.h*B.h) * (1 << 16));
+	
 
-    return (mfixed)( ((A.l*B.l)>> 16) +
-            (A.l * B.h )    +
+    //temp.l = (A.l * B.h ) >> 16 + (A.h * B.l ) >> 16 + (A.l*B.l);
+    temp.h =  (A.l * B.h )    +
+	(A.h * B.l )    +
+	((A.h*B.h) >> 16);
+
+//5; /*(short)((int)(((( ((A.l*B.l)<< 16) +
+    /*(A.l * B.h )    +
             (A.h * B.l )    +
-            ((A.h*B.h) << 16)
-            );
+				    ((A.h*B.h) >> 16)))) * (1<<16)));
+
+
+/*(short)((int)((( ((A.l*B.l) << 16) +
+			      (A.l * B.h )    +
+			      (A.h * B.l )    +
+			      ((A.h*B.h) >> 16)))) * (1<<16));
+*/
+    //cout << "mul" << temp << endl;
+
+    /*return (mfixed)( ((A.l*B.l) << 16) +
+		     (A.l * B.h )    +
+		     (A.h * B.l )    +
+		     ((A.h*B.h) >> 16)
+		     );*/
+
+    return temp;
 }
 
 // fixed point addition
@@ -61,7 +94,18 @@ mfixed fx_add (mfixed A, mfixed B)
     return A+B;
 }
 
+float to_float(mfixed A)
+{
+    float fl;
+    fl = (float)A.h / (float)65535;
+    fl += A.l;
+    return fl;
+}
+
 ostream& operator << ( ostream& os,  mfixed const & v ) {
-    os << "(" << v.h << "," << std::boolalpha << v.l << ")";
+    float fl;
+    fl = (float)v.h / (float)65535;
+    fl += v.l;
+    os << fl;
     return os;
 }
