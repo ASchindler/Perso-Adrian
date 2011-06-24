@@ -22,6 +22,7 @@ namespace soclib { namespace caba {
 	    int tile;
 
 	    int state;
+	    int wait_cycle;
 	    /* 0 : WAIT
 	       1 : Calculate
 	       2 : Finished
@@ -35,13 +36,6 @@ namespace soclib { namespace caba {
 
                 sc_in_clk           clk;
                 sc_in<bool>         reset_n;
-		sc_in<bool>         p0_valid;
-		sc_in<bool>         q0_valid;
-		sc_in<bool>         q1_valid;
-		sc_in<bool>         q2_valid;
-		sc_in<bool>         r0_valid;
-		sc_in<bool>         r1_valid;
-		sc_in<bool>         s0_valid;
 		sc_in<bool>         load;
 		sc_in<mfixed>          p0_in;		
 		sc_in<mfixed>          q0_in;

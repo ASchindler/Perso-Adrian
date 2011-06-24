@@ -67,7 +67,7 @@ namespace soclib { namespace caba {
 			col = 0;
 			o_valid = 0;
 			o_finished = 0;
-			if(load && ((q0_valid & q1_valid & q2_valid & r0_valid & r1_valid & s0_valid & p0_valid)))
+			if(load)
 			{
 			    state = 1;
 			    p0 = p0_in;
@@ -90,6 +90,7 @@ namespace soclib { namespace caba {
 		    case 1: {
 			if(!load)
 			{
+			    wait_cycle = 4;
 			    o_valid = 1;
 			    x_3 = p3;
 			    x_2 = p2;
@@ -141,7 +142,12 @@ namespace soclib { namespace caba {
 				}
 			    }
 			}
-			wait();
+			/* wait loop to output a pixel at 25 MHz rather than 100 MHz */
+			while(wait_cycle > 0)
+			{
+			    wait_cycle--;
+			    wait();
+			}
 			break;
 		    }
 		    case 2: {

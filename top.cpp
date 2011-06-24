@@ -1,6 +1,7 @@
 #include "systemc.h"
 #include "incr_calc.h"
 
+
 /*extern "C"
 {
 #include "mfixed.h"
@@ -11,15 +12,14 @@ void next_cycle (sc_signal<bool> &signal_clk);
 void calc_coeffs (int i, int j);
 
 mfixed a30 = (mfixed(pow(2,-15)));
-//mfixed(0,3051757);//pow(2,-15);
-mfixed a20 = (mfixed(pow(-3.2,-8)));//mfixed(0,9094947);//
+mfixed a20 = (mfixed(pow(-3.2,-8)));
 mfixed a10 = (mfixed(2));
 mfixed a00 = (mfixed(0));
 mfixed a21 = (mfixed(0));
-mfixed a11 = (mfixed(pow(-2,-7)));//mfixed(-0,78125000);//pow(-2,-7);
+mfixed a11 = (mfixed(pow(-2,-7)));
 mfixed a01 = (mfixed(1));
-mfixed a12 = (mfixed(pow(2,-15)));// pow(2,-15);
-mfixed a02 = (mfixed(pow(-2,-8)));//mfixed(0,390625000);//pow(-2,-8);
+mfixed a12 = (mfixed(pow(2,-15)));
+mfixed a02 = (mfixed(pow(-2,-8)));
 mfixed a03 = (mfixed(0));
 
     sc_signal<mfixed> p0;
@@ -54,7 +54,7 @@ int sc_main(int argc, char *argv[])
     int i, j;
     mfixed x, y;
     mfixed x_norm, y_norm;
-    mfixed x_exp;
+    sc_signal<mfixed> x_exp;
 
     sc_signal<bool> clk;
     sc_signal<bool> reset_n;
@@ -62,20 +62,10 @@ int sc_main(int argc, char *argv[])
     sc_signal<mfixed> x_2;
     sc_signal<mfixed> x_1;
     sc_signal<bool> x_valid;
-    sc_signal<bool> p0_valid;    
-    sc_signal<bool> q0_valid;
-    sc_signal<bool> q1_valid;
-    sc_signal<bool> q2_valid;
-    sc_signal<bool> q3_valid;
-    sc_signal<bool> r0_valid;
-    sc_signal<bool> r1_valid;
-    sc_signal<bool> r2_valid;
-    sc_signal<bool> s0_valid;
-    sc_signal<bool> s1_valid;
     sc_signal<bool> load;
     sc_signal<bool> finished;
 
-
+    int wait_cycle;
 
     sc_trace_file *my_trace_file;
     my_trace_file =
@@ -91,13 +81,6 @@ int sc_main(int argc, char *argv[])
     my_calc.x_3(x_3);
     my_calc.x_2(x_2);
     my_calc.x_1(x_1);
-    my_calc.p0_valid(p0_valid);
-    my_calc.q0_valid(q0_valid);
-    my_calc.q1_valid(q1_valid);
-    my_calc.q2_valid(q2_valid);
-    my_calc.r0_valid(r0_valid);
-    my_calc.r1_valid(r1_valid);
-    my_calc.s0_valid(s0_valid);
     my_calc.p0_in(p0);
     my_calc.q0_in(q0);
     my_calc.q1_in(q1);
@@ -136,6 +119,8 @@ int sc_main(int argc, char *argv[])
     y2 = fx_mul(y,y);
     y3 = fx_mul(y2,y);
 
+    wait_cycle = -3;
+
     //for each tile
     for(j=0; j<30; j++) //30 vertically
 	for(i=0; i<40; i++) //40 horizontally
@@ -144,59 +129,48 @@ int sc_main(int argc, char *argv[])
 	    y = fx_mul(mfixed(TILE_HEIGHT),mfixed(j));
 	    cout << "x : " << x << " y: " << y << endl;
 	    calc_coeffs(i, j);
-	    p0_valid = 1;
-	    q0_valid = 1;
-	    q1_valid = 1;
-	    q2_valid = 1;
-	    q3_valid = 1;
-	    r0_valid = 1;
-	    r1_valid = 1;
-	    r2_valid = 1;
-	    s0_valid = 1;
-	    s1_valid = 1;
 	    load = 1;
 	    next_cycle(clk);
-	    p0_valid = 0;
-	    q0_valid = 0;
-	    q1_valid = 0;
-	    q2_valid = 0;
-	    q3_valid = 0;
-	    r0_valid = 0;
-	    r1_valid = 0;
-	    r2_valid = 0;
-	    s0_valid = 0;
-	    s1_valid = 0;
 	    load = 0;
-	    x_exp = mfixed(0);
+	    //x_exp = mfixed(0);
 	    next_cycle(clk);
+
 	    while(x_valid && !finished)
 	    {
-	      //x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
-	      x_exp = fx_add(fx_mul(a30,x3),fx_add(fx_mul(a21,fx_mul(x2,y)),fx_add(fx_mul(a12,fx_mul(x,y2)),fx_add(fx_mul(a03,y3),fx_add(fx_mul(a20,x2),fx_add(fx_mul(a11,fx_mul(x,y)),fx_add(fx_mul(a02,y2),fx_add(fx_mul(a10,x),fx_add(fx_mul(a01,y),a00)))))))));
+		//x_exp = a30 * pow(x,3) + a21 * pow(x,2) * y + a12 * x * pow(y,2) + a03 * pow(y,3) + a20 * pow(x,2) + a11 * x * y + a02 * pow(y,2) + a10 * x + a01 * y + a00;
+		if (wait_cycle == 4)
+		{
+		    x = fx_add(x,mfixed(1));
+		    if (x == (fx_add(mfixed(TILE_WIDTH),(fx_mul(mfixed(16),mfixed(i))))))
+		    {
+			x = fx_mul(mfixed(16),mfixed(i));
+			y = fx_add(y,mfixed(1));
+		    }
+
+		    x2 = fx_mul(x,x);
+		    x3 = fx_mul(x2,x);
+
+		    y2 = fx_mul(y,y);
+		    y3 = fx_mul(y2,y);
+		    x_exp = fx_add(fx_mul(a30,x3),fx_add(fx_mul(a21,fx_mul(x2,y)),fx_add(fx_mul(a12,fx_mul(x,y2)),fx_add(fx_mul(a03,y3),fx_add(fx_mul(a20,x2),fx_add(fx_mul(a11,fx_mul(x,y)),fx_add(fx_mul(a02,y2),fx_add(fx_mul(a10,x),fx_add(fx_mul(a01,y),a00)))))))));
+		    wait_cycle = 0;
+
+		}
+
+		wait_cycle++;
 		cout << "x : " << x << " y: " << y << endl;
+		if(abs(float((to_float(x_3) - to_float(x_exp))/(to_float(x_exp))))>float(0.1))
+		    cout << "ERROR" << endl;
 		next_cycle(clk);
 		cout << " -------------- " << endl;
 		cout << x_exp << " " << x_3 << endl;
-		if((to_float(x_3) - to_float(x_exp))>0.03*to_float(x_3))
-		    cout << "ERROR" << endl;
-		x = fx_add(x,mfixed(1));
-		if (x == (fx_add(mfixed(TILE_WIDTH),(fx_mul(mfixed(16),mfixed(i))))))
-		{
-		    x = fx_mul(mfixed(16),mfixed(i));
-		    y = fx_add(y,mfixed(1));
-		}
-
-		x2 = fx_mul(x,x);
-		x3 = fx_mul(x2,x);
-
-		y2 = fx_mul(y,y);
-		y3 = fx_mul(y2,y);
 
 		//cout << x2 << y2 << endl;
 
 		//cout << "mul test" << fx_mul(mfixed(1.5),mfixed(3.5)) << endl;
 	    }
 	    cout << "--------- FINISHED TILE " << i << " " << j << endl;
+	    wait_cycle = -3;
 	}
 
     sc_close_vcd_trace_file (my_trace_file);
